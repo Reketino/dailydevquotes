@@ -45,6 +45,29 @@ Example:
 Congratulations.
 You now have dynamic content and zero additional job security.
 
+## 🎨 Themes
+
+Images don’t respect GitHub dark/light mode (because of course they don’t),
+so themes are controlled via a query parameter.
+
+🌙 Dark (default)
+![Daily Dev Quote](https://dailydevquotes.vercel.app/api/quote?user=YOUR_USERNAME&theme=dark)
+
+☀️ Light
+![Daily Dev Quote](https://dailydevquotes.vercel.app/api/quote?user=YOUR_USERNAME&theme=light)
+
+🌌 Tokyo Night
+![Daily Dev Quote](https://dailydevquotes.vercel.app/api/quote?user=YOUR_USERNAME&theme=tokyonight)
+
+
+Aliases also work:
+
+- theme=tokyo
+
+- theme=tokyo-night
+
+- Use whatever matches your GitHub profile and emotional state.
+
 ## 🧠 How it works (uncomfortably honest)
 - A list of questionable quotes lives in a public GitHub repo
 
