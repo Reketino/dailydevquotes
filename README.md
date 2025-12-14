@@ -74,7 +74,7 @@ You now have dynamic content and zero additional job security.
 
 Quotes live here:
 
-👉 **https://github.com/Reketino/dev-quotes**
+👉 https://github.com/Reketino/dev-quotes
 
 PRs are welcome as long as:
 
