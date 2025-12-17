@@ -1,5 +1,4 @@
 import { ImageResponse } from "@vercel/og";
-import { relative } from "path";
 
 export const runtime = "edge";
 
@@ -7,6 +6,8 @@ const emojis = ["☠️", "🔥", "🧠", "🥴", "🤡", "🚀", "🃏", "🪖"
 
 const QUOTES_URL =
   "https://raw.githubusercontent.com/Reketino/dev-quotes/master/quotes.json";
+
+  type Mood = "chaos" | "pain" | "fun" | "wisdom";
 
 function hash(str: string) {
   let h = 0;
@@ -26,11 +27,25 @@ export async function GET(req: Request) {
     next: { revalidate: 86400 },
   });
 
-  const quotes: string[] = await res.json();
+  const rawQuotes: any[] = await res.json();
 
   const day = Math.floor(Date.now() / 86400000);
-  const index = hash(`${user}-${day}`) % quotes.length;
-  const quote = quotes[index];
+  const index = hash(`${user}-${day}`) % rawQuotes.length;
+
+   const raw = rawQuotes[index];
+
+const text: string =
+typeof raw === "string"
+? raw
+: typeof raw?.text === "string"
+? raw.text 
+: "Code is hard. Life is harder.";
+
+const mood: Mood = 
+typeof raw === "object" && raw?.mood
+? raw.mood 
+: "chaos";
+
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
   const emoji = emojis[emojiIndex];
 
@@ -72,45 +87,31 @@ export async function GET(req: Request) {
           textAlign: "center",
           fontSize: 32,
           fontFamily: "Inter",
-          position: "relative",
         }}
       >
-        <div 
-        style={{
-          position: "absolute",
-          inset: 0,
-          opacity: 0.03,
-          backgroundImage:
-          "repeating-linear-gradient(45deg, #ffffff 0 1px, transparent 1px 2px)",
-          pointerEvents: "none",
-        }}
-        />
-
-
         <section
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             gap: 24,
-            position: "relative",
           }}
         >
           <div style={{ display: "flex", fontSize: emojiSize }}>{emoji}</div>
-          <div style={{ display: "flex" }}>“{quote}”</div>
+          <div style={{ display: "flex" }}>“{text}”</div>
         </section>
-
-        <section 
+      
+       <section 
         style={{ 
           position: "absolute",
-          bottom: 40,
-          right: 60,
+          bottom: 10,
+          right: 70,
           fontSize: 18,
           opacity: themeKey === "light" ? 0.4 : 0.6,
           letterSpacing: "0.05em",
         }}
         >
-          - Reketino.dev 🐻
+          Reketino.dev 🐻
         </section>
 
       </main>
