@@ -1,4 +1,5 @@
 import { ImageResponse } from "@vercel/og";
+import { relative } from "path";
 
 export const runtime = "edge";
 
@@ -71,19 +72,47 @@ export async function GET(req: Request) {
           textAlign: "center",
           fontSize: 32,
           fontFamily: "Inter",
+          position: "relative",
         }}
       >
+        <div 
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: 0.03,
+          backgroundImage:
+          "repeating-linear-gradient(45deg, #ffffff 0 1px, transparent 1px 2px)",
+          pointerEvents: "none",
+        }}
+        />
+
+
         <section
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             gap: 24,
+            position: "relative",
           }}
         >
           <div style={{ display: "flex", fontSize: emojiSize }}>{emoji}</div>
           <div style={{ display: "flex" }}>“{quote}”</div>
         </section>
+
+        <section 
+        style={{ 
+          position: "absolute",
+          bottom: 40,
+          right: 60,
+          fontSize: 18,
+          opacity: themeKey === "light" ? 0.4 : 0.6,
+          letterSpacing: "0.05em",
+        }}
+        >
+          - Reketino.dev 🐻
+        </section>
+
       </main>
     ),
     {
