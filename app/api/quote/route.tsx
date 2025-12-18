@@ -1,4 +1,5 @@
 import { ImageResponse } from "@vercel/og";
+import { relative } from "path";
 
 export const runtime = "edge";
 
@@ -72,6 +73,18 @@ typeof raw === "object" && raw?.mood
   const emojiSize =
     themeKey === "light" ? 48 : themeKey === "tokyonight" ? 60 : 56;
 
+  const grainByMood: Record<
+  Mood, 
+  { opacity: number }
+  > = {
+    chaos: { opacity: 0.006 },
+    pain: { opacity: 0.04, },
+    fun: { opacity: 0.05,  },
+    wisdom: { opacity: 0.025 },
+  };
+
+  const grain = grainByMood[mood]
+
   return new ImageResponse(
     (
       <main
@@ -87,8 +100,20 @@ typeof raw === "object" && raw?.mood
           textAlign: "center",
           fontSize: 32,
           fontFamily: "Inter",
+          position: "relative",
         }}
       >
+      <section
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        opacity: grain.opacity,
+        pointerEvents: "none",
+      }}
+      />
         <section
           style={{
             display: "flex",
