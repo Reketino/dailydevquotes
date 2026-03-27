@@ -1,5 +1,5 @@
 import { ImageResponse } from "@vercel/og";
-import { relative } from "path";
+
 
 export const runtime = "edge";
 
