@@ -19,6 +19,9 @@ function hash(str: string) {
   return Math.abs(h);
 }
 
+async function getDevNews(user:string) {
+}
+
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const user = searchParams.get("user") ?? "guest";
