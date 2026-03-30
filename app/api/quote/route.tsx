@@ -51,7 +51,9 @@ export async function GET(req: Request) {
     next: { revalidate: 86400 },
   });
 
-  const rawQuotes: any[] = await res.json();
+  type Quote = string | { text: string; mood?: Mood};
+
+  const rawQuotes: Quote[] = await res.json();
 
   const day = Math.floor(Date.now() / 86400000);
   const index = hash(`${user}-${day}`) % rawQuotes.length;
