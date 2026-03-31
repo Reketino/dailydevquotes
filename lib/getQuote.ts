@@ -26,6 +26,8 @@ export type Mood = "chaos" | "pain" | "fun" | "wisdom";
         ? raw.text
         : "Code is hard. Life is harder.";
 
-  const mood: Mood = typeof raw === "object" && raw?.mood ? raw.mood : "chaos";
+  const mood: Mood = 
+  typeof raw === "object" && raw?.mood ? raw.mood : "chaos";
  
+  return { text, mood}
   }
