@@ -17,5 +17,7 @@ export type Mood = "chaos" | "pain" | "fun" | "wisdom";
   const day = Math.floor(Date.now() / 86400000);
   const index = hash(`${user}-${day}`) % rawQuotes.length;
 
+   const raw = rawQuotes[index];
+
     
   }
