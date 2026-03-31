@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Dev News headlines (because who needs a stable mental state)
+- refactor getQuote logic into a separate module (it’s currently in the API route, which is a crime against software engineering)
 
 ## 🐻 Author
 - Built by @Reketino
