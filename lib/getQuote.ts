@@ -19,7 +19,7 @@ export type Mood = "chaos" | "pain" | "fun" | "wisdom";
 
    const raw = rawQuotes[index];
 
-   const text: string =
+   const text =
     typeof raw === "string"
       ? raw
       : typeof raw?.text === "string"
