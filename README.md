@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- refactor getQuote logic into a separate module (it’s currently in the API route, which is a crime against software engineering)
+- refactor theme logic (it’s a mess)
 
 ## 🐻 Author
 - Built by @Reketino
