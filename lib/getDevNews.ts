@@ -25,7 +25,13 @@ export async function getDevNews(user: string): Promise<string> {
       `https://hacker-news.firebaseio.com/v0/item/${ids[index]}.json`,
       { next: { revalidate: 3600 } },
     );
+
     const story: HNStory = await storyRes.json();
+
+    if (!story || typeof story.title !== "string") {
+        return "There ain't no dev news today⛵"
+    }
+
 
     return story?.title ?? "No devs news today aye.";
   } catch {
