@@ -12,8 +12,14 @@ export async function getDevNews(user: string): Promise<string> {
     );
 
     const ids: number[] = await idsRes.json();
-    const day = Math.floor(Date.now() / 86400000);
-    const index = hash(`news-${user}-${day}`) % Math.min(ids.length, 20);
+
+    if (!ids.length) {
+        return "There ain't no dev news today aye"
+    }
+
+    const currentDay = Math.floor(Date.now() / 86400000);
+    const limit = Math.min(ids.length, 20);
+    const index = hash(`news-${user}-${currentDay}`) % limit
 
     const storyRes = await fetch(
       `https://hacker-news.firebaseio.com/v0/item/${ids[index]}.json`,
