@@ -19,5 +19,13 @@ export type Mood = "chaos" | "pain" | "fun" | "wisdom";
 
    const raw = rawQuotes[index];
 
-    
+   const text: string =
+    typeof raw === "string"
+      ? raw
+      : typeof raw?.text === "string"
+        ? raw.text
+        : "Code is hard. Life is harder.";
+
+  const mood: Mood = typeof raw === "object" && raw?.mood ? raw.mood : "chaos";
+ 
   }
