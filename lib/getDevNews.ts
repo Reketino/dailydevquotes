@@ -1,8 +1,8 @@
-import { hash } from "./hash"
+import { hash } from "./hash";
 
 type HNStory = {
-    title?: string;
-}
+  title?: string;
+};
 
 export async function getDevNews(user: string): Promise<string> {
   try {
@@ -14,12 +14,12 @@ export async function getDevNews(user: string): Promise<string> {
     const ids: number[] = await idsRes.json();
 
     if (!ids.length) {
-        return "There ain't no dev news today aye"
+      return "There ain't no dev news today aye";
     }
 
     const currentDay = Math.floor(Date.now() / 86400000);
     const limit = Math.min(ids.length, 20);
-    const index = hash(`news-${user}-${currentDay}`) % limit
+    const index = hash(`news-${user}-${currentDay}`) % limit;
 
     const storyRes = await fetch(
       `https://hacker-news.firebaseio.com/v0/item/${ids[index]}.json`,
@@ -29,7 +29,7 @@ export async function getDevNews(user: string): Promise<string> {
     const story: HNStory = await storyRes.json();
 
     if (!story || typeof story.title !== "string") {
-        return "There ain't no dev news today⛵"
+      return "There ain't no dev news today⛵";
     }
 
     return story?.title ?? "No devs news today aye.";
