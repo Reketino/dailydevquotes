@@ -32,7 +32,6 @@ export async function getDevNews(user: string): Promise<string> {
         return "There ain't no dev news today⛵"
     }
 
-
     return story?.title ?? "No devs news today aye.";
   } catch {
     return "Dev world has retired today aye...";
