@@ -109,6 +109,10 @@ PRs are welcome as long as:
 
 - it doesn’t try to sell crypto
 
+## Working on:
+
+- Dev News headlines (because who needs a stable mental state)
+
 ## 🐻 Author
 - Built by @Reketino
 - Star it. Use it. Or don’t.
