@@ -11,5 +11,11 @@ export type Mood = "chaos" | "pain" | "fun" | "wisdom";
     const res = await fetch (QUOTES_URL, {
         next: { revalidate: 86400 },
     })
+
+  const rawQuotes: Quote[] = await res.json();
+
+  const day = Math.floor(Date.now() / 86400000);
+  const index = hash(`${user}-${day}`) % rawQuotes.length;
+
     
   }
