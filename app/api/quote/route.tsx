@@ -10,10 +10,7 @@ export const runtime = "edge";
 
 const emojis = ["☠️", "🔥", "🧠", "🥴", "🤡", "🚀", "🃏", "🪖"];
 
-const QUOTES_URL =
-  "https://raw.githubusercontent.com/Reketino/dev-quotes/master/quotes.json";
 
-  
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const user = searchParams.get("user") ?? "guest";
