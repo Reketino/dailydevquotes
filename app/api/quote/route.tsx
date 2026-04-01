@@ -21,28 +21,17 @@ export async function GET(req: Request) {
     getDevNews(user),
   ])
 
-  
-
   const shortNews = truncate(news, 90);
 
   const day = Math.floor(Date.now() / 86400000);
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
   const emoji = emojis[emojiIndex];
 
-  const text: string =
-    typeof raw === "string"
-      ? raw
-      : typeof raw?.text === "string"
-        ? raw.text
-        : "Code is hard. Life is harder.";
+  const activeTheme = resolveTheme(theme);
+  const emojiSize =
+  theme === "light" ? 48 : theme.includes("tokyo") ? 60 : 56;
 
-  const mood: Mood = typeof raw === "object" && raw?.mood ? raw.mood : "chaos";
-
-  const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
-  const emoji = emojis[emojiIndex];
-
-
-  const grainByMood: Record<Mood, { opacity: number }> = {
+  const grainByMood {
     chaos: { opacity: 0.006 },
     pain: { opacity: 0.04 },
     fun: { opacity: 0.05 },
