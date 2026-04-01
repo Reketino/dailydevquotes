@@ -32,7 +32,7 @@ export async function GET(req: Request) {
   const emojiSize =
   theme === "light" ? 48 : theme?.includes("tokyo") ? 60 : 56;
 
-  const grainByMood: Record<typeof mood, { opacity: number }> = {
+  const grainByMood: Record<Mood, { opacity: number }> = {
     chaos: { opacity: 0.006 },
     pain: { opacity: 0.04 },
     fun: { opacity: 0.05 },
