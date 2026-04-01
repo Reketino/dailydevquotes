@@ -20,4 +20,6 @@ export function resolveTheme(theme: string) {
     theme === "tokyo-night" || theme === "tokyo"
     ? "tokyonight"
     : theme;
+
+return themes[key as keyof typeof themes] ?? themes.dark;
 }
