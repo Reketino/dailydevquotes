@@ -6,11 +6,9 @@ import { truncate } from "@/lib/truncate";
 import { resolveTheme } from "@/lib/theme";
 import type { Mood } from "@/lib/getQuote";
 
-
 export const runtime = "edge";
 
 const emojis = ["☠️", "🔥", "🧠", "🥴", "🤡", "🚀", "🃏", "🪖"];
-
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -20,7 +18,7 @@ export async function GET(req: Request) {
   const [{ text, mood }, news] = await Promise.all([
     getQuote(user),
     getDevNews(user),
-  ])
+  ]);
 
   const shortNews = truncate(news, 90);
 
@@ -29,8 +27,7 @@ export async function GET(req: Request) {
   const emoji = emojis[emojiIndex];
 
   const activeTheme = resolveTheme(theme);
-  const emojiSize =
-  theme === "light" ? 48 : theme?.includes("tokyo") ? 60 : 56;
+  const emojiSize = theme === "light" ? 48 : theme?.includes("tokyo") ? 60 : 56;
 
   const grainByMood: Record<Mood, { opacity: number }> = {
     chaos: { opacity: 0.006 },
@@ -80,13 +77,15 @@ export async function GET(req: Request) {
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
         <div>“{text}”</div>
 
-        <div style={{ 
-          fontSize: 20,
-          opacity: 0.7,
-          maxWidth: 900,
-         }}>
-           📰 {shortNews}
-          </div>
+        <div
+          style={{
+            fontSize: 20,
+            opacity: 0.7,
+            maxWidth: 900,
+          }}
+        >
+          📰 {shortNews}
+        </div>
       </section>
 
       <section
