@@ -8,5 +8,9 @@ export const themes = {
     light: {
         background: "linear-gradient(135deg, #ffffff, #f1f5f9)",
         text: "#020617"
+    },
+    tokyonight: {
+        background: "linear-gradient(135deg, #1a1b26, #24283b)",
+        text: "#c0caf5", 
     }
 }
