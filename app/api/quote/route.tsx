@@ -13,40 +13,7 @@ const emojis = ["☠️", "🔥", "🧠", "🥴", "🤡", "🚀", "🃏", "🪖"
 const QUOTES_URL =
   "https://raw.githubusercontent.com/Reketino/dev-quotes/master/quotes.json";
 
-type Mood = "chaos" | "pain" | "fun" | "wisdom";
-
-function hash(str: string) {
-  let h = 0;
-  for (let i = 0; i < str.length; i++) {
-    h = (h << 5) - h + str.charCodeAt(i);
-    h |= 0;
-  }
-  return Math.abs(h);
-}
-
-async function getDevNews(user: string) {
-  try {
-    const idsRes = await fetch(
-      "https://hacker-news.firebaseio.com/v0/topstories.json",
-      { next: { revalidate: 3600 } },
-    );
-
-    const ids: number[] = await idsRes.json();
-    const day = Math.floor(Date.now() / 86400000);
-    const index = hash(`news-${user}-${day}`) % Math.min(ids.length, 20);
-
-    const storyRes = await fetch(
-      `https://hacker-news.firebaseio.com/v0/item/${ids[index]}.json`,
-      { next: { revalidate: 3600 } },
-    );
-    const story = await storyRes.json();
-
-    return story?.title ?? "No devs news today aye.";
-  } catch {
-    return "Dev world has retired today aye...";
-  }
-}
-
+  
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const user = searchParams.get("user") ?? "guest";
