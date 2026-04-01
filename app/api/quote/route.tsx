@@ -1,4 +1,10 @@
 import { ImageResponse } from "@vercel/og";
+import { hash } from "@/lib/hash";
+import { getDevNews } from "@/lib/getDevNews";
+import { getQuote } from "@/lib/getQuote";
+import { truncate } from "@/lib/truncate";
+import { resolveTheme } from "@/lib/theme";
+
 
 export const runtime = "edge";
 
