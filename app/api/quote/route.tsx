@@ -30,7 +30,7 @@ export async function GET(req: Request) {
 
   const activeTheme = resolveTheme(theme);
   const emojiSize =
-  theme === "light" ? 48 : theme.includes("tokyo") ? 60 : 56;
+  theme === "light" ? 48 : theme?.includes("tokyo") ? 60 : 56;
 
   const grainByMood: Record<typeof mood, { opacity: number }> = {
     chaos: { opacity: 0.006 },
