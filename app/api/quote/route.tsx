@@ -4,6 +4,7 @@ import { getDevNews } from "@/lib/getDevNews";
 import { getQuote } from "@/lib/getQuote";
 import { truncate } from "@/lib/truncate";
 import { resolveTheme } from "@/lib/theme";
+import type { Mood } from "@/lib/getQuote";
 
 
 export const runtime = "edge";
@@ -31,7 +32,7 @@ export async function GET(req: Request) {
   const emojiSize =
   theme === "light" ? 48 : theme.includes("tokyo") ? 60 : 56;
 
-  const grainByMood {
+  const grainByMood: Record<typeof mood, { opacity: number }> = {
     chaos: { opacity: 0.006 },
     pain: { opacity: 0.04 },
     fun: { opacity: 0.05 },
