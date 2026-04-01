@@ -26,9 +26,8 @@ export async function GET(req: Request) {
   const shortNews = truncate(news, 90);
 
   const day = Math.floor(Date.now() / 86400000);
-  const emojiIndex = hash(`emoji-${user}-${day}`) % rawQuotes.length;
-
-  const raw = rawQuotes[index];
+  const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
+  const emoji = emojis[emojiIndex];
 
   const text: string =
     typeof raw === "string"
