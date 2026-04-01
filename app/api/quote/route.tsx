@@ -21,12 +21,12 @@ export async function GET(req: Request) {
     getDevNews(user),
   ])
 
-  type Quote = string | { text: string; mood?: Mood };
+  
 
-  const rawQuotes: Quote[] = await res.json();
+  const shortNews = truncate(news, 90);
 
   const day = Math.floor(Date.now() / 86400000);
-  const index = hash(`${user}-${day}`) % rawQuotes.length;
+  const emojiIndex = hash(`emoji-${user}-${day}`) % rawQuotes.length;
 
   const raw = rawQuotes[index];
 
