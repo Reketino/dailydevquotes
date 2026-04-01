@@ -1,100 +1,38 @@
 import { ImageResponse } from "@vercel/og";
+import { hash } from "@/lib/hash";
+import { getDevNews } from "@/lib/getDevNews";
+import { getQuote } from "@/lib/getQuote";
+import { truncate } from "@/lib/truncate";
+import { resolveTheme } from "@/lib/theme";
+import type { Mood } from "@/lib/getQuote";
+
 
 export const runtime = "edge";
 
 const emojis = ["☠️", "🔥", "🧠", "🥴", "🤡", "🚀", "🃏", "🪖"];
 
-const QUOTES_URL =
-  "https://raw.githubusercontent.com/Reketino/dev-quotes/master/quotes.json";
-
-type Mood = "chaos" | "pain" | "fun" | "wisdom";
-
-function hash(str: string) {
-  let h = 0;
-  for (let i = 0; i < str.length; i++) {
-    h = (h << 5) - h + str.charCodeAt(i);
-    h |= 0;
-  }
-  return Math.abs(h);
-}
-
-async function getDevNews(user: string) {
-  try {
-    const idsRes = await fetch(
-      "https://hacker-news.firebaseio.com/v0/topstories.json",
-      { next: { revalidate: 3600 } },
-    );
-
-    const ids: number[] = await idsRes.json();
-    const day = Math.floor(Date.now() / 86400000);
-    const index = hash(`news-${user}-${day}`) % Math.min(ids.length, 20);
-
-    const storyRes = await fetch(
-      `https://hacker-news.firebaseio.com/v0/item/${ids[index]}.json`,
-      { next: { revalidate: 3600 } },
-    );
-    const story = await storyRes.json();
-
-    return story?.title ?? "No devs news today aye.";
-  } catch {
-    return "Dev world has retired today aye...";
-  }
-}
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const user = searchParams.get("user") ?? "guest";
   const theme = searchParams.get("theme") ?? "dark";
 
-  const res = await fetch(QUOTES_URL, {
-    next: { revalidate: 86400 },
-  });
+  const [{ text, mood }, news] = await Promise.all([
+    getQuote(user),
+    getDevNews(user),
+  ])
 
-  type Quote = string | { text: string; mood?: Mood };
-
-  const rawQuotes: Quote[] = await res.json();
+  const shortNews = truncate(news, 90);
 
   const day = Math.floor(Date.now() / 86400000);
-  const index = hash(`${user}-${day}`) % rawQuotes.length;
-
-  const raw = rawQuotes[index];
-
-  const text: string =
-    typeof raw === "string"
-      ? raw
-      : typeof raw?.text === "string"
-        ? raw.text
-        : "Code is hard. Life is harder.";
-
-  const mood: Mood = typeof raw === "object" && raw?.mood ? raw.mood : "chaos";
-
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
   const emoji = emojis[emojiIndex];
 
-  const themes = {
-    dark: {
-      background: "linear-gradient(135deg, #020617, #0f172a)",
-      text: "#e5e7eb",
-    },
-    light: {
-      background: "linear-gradient(135deg, #ffffff, #f1f5f9)",
-      text: "#020617",
-    },
-    tokyonight: {
-      background: "linear-gradient(135deg, #1a1b26, #24283b)",
-      text: "#c0caf5",
-    },
-  };
-
-  const themeKey =
-    theme === "tokyo-night" || theme === "tokyo" ? "tokyonight" : theme;
-
-  const activeTheme = themes[themeKey as keyof typeof themes] ?? themes.dark;
-
+  const activeTheme = resolveTheme(theme);
   const emojiSize =
-    themeKey === "light" ? 48 : themeKey === "tokyonight" ? 60 : 56;
+  theme === "light" ? 48 : theme?.includes("tokyo") ? 60 : 56;
 
-  const grainByMood: Record<Mood, { opacity: number }> = {
+  const grainByMood: Record<typeof mood, { opacity: number }> = {
     chaos: { opacity: 0.006 },
     pain: { opacity: 0.04 },
     fun: { opacity: 0.05 },
@@ -139,8 +77,16 @@ export async function GET(req: Request) {
           gap: 24,
         }}
       >
-        <div style={{ display: "flex", fontSize: emojiSize }}>{emoji}</div>
-        <div style={{ display: "flex" }}>“{text}”</div>
+        <div style={{ fontSize: emojiSize }}>{emoji}</div>
+        <div>“{text}”</div>
+
+        <div style={{ 
+          fontSize: 20,
+          opacity: 0.7,
+          maxWidth: 900,
+         }}>
+           📰 {shortNews}
+          </div>
       </section>
 
       <section
@@ -149,7 +95,7 @@ export async function GET(req: Request) {
           bottom: 10,
           right: 70,
           fontSize: 18,
-          opacity: themeKey === "light" ? 0.4 : 0.6,
+          opacity: theme === "light" ? 0.4 : 0.6,
           letterSpacing: "0.05em",
         }}
       >

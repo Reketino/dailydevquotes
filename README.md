@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- refactor theme logic (it’s a mess)
+- refactor route.ts
 
 ## 🐻 Author
 - Built by @Reketino
