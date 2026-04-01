@@ -16,9 +16,10 @@ export async function GET(req: Request) {
   const user = searchParams.get("user") ?? "guest";
   const theme = searchParams.get("theme") ?? "dark";
 
-  const res = await fetch(QUOTES_URL, {
-    next: { revalidate: 86400 },
-  });
+  const [{ text, mood }, news] = await promise.all([
+    getQuote(user),
+    getDevNews(user),
+  ])
 
   type Quote = string | { text: string; mood?: Mood };
 
