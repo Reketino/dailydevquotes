@@ -42,28 +42,6 @@ export async function GET(req: Request) {
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
   const emoji = emojis[emojiIndex];
 
-  const themes = {
-    dark: {
-      background: "linear-gradient(135deg, #020617, #0f172a)",
-      text: "#e5e7eb",
-    },
-    light: {
-      background: "linear-gradient(135deg, #ffffff, #f1f5f9)",
-      text: "#020617",
-    },
-    tokyonight: {
-      background: "linear-gradient(135deg, #1a1b26, #24283b)",
-      text: "#c0caf5",
-    },
-  };
-
-  const themeKey =
-    theme === "tokyo-night" || theme === "tokyo" ? "tokyonight" : theme;
-
-  const activeTheme = themes[themeKey as keyof typeof themes] ?? themes.dark;
-
-  const emojiSize =
-    themeKey === "light" ? 48 : themeKey === "tokyonight" ? 60 : 56;
 
   const grainByMood: Record<Mood, { opacity: number }> = {
     chaos: { opacity: 0.006 },
