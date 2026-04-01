@@ -12,5 +12,12 @@ export const themes = {
     tokyonight: {
         background: "linear-gradient(135deg, #1a1b26, #24283b)",
         text: "#c0caf5", 
-    }
+    },
+};
+
+export function resolveTheme(theme: string) {
+    const key =
+    theme === "tokyo-night" || theme === "tokyo"
+    ? "tokyonight"
+    : theme;
 }
