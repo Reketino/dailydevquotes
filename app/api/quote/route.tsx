@@ -16,7 +16,7 @@ export async function GET(req: Request) {
   const user = searchParams.get("user") ?? "guest";
   const theme = searchParams.get("theme") ?? "dark";
 
-  const [{ text, mood }, news] = await promise.all([
+  const [{ text, mood }, news] = await Promise.all([
     getQuote(user),
     getDevNews(user),
   ])
@@ -76,8 +76,16 @@ export async function GET(req: Request) {
           gap: 24,
         }}
       >
-        <div style={{ display: "flex", fontSize: emojiSize }}>{emoji}</div>
-        <div style={{ display: "flex" }}>“{text}”</div>
+        <div style={{ fontSize: emojiSize }}>{emoji}</div>
+        <div>“{text}”</div>
+
+        <div style={{ 
+          fontSize: 20,
+          opacity: 0.7,
+          maxWidth: 900,
+         }}>
+           📰 {shortNews}
+          </div>
       </section>
 
       <section
@@ -86,7 +94,7 @@ export async function GET(req: Request) {
           bottom: 10,
           right: 70,
           fontSize: 18,
-          opacity: themeKey === "light" ? 0.4 : 0.6,
+          opacity: theme === "light" ? 0.4 : 0.6,
           letterSpacing: "0.05em",
         }}
       >
