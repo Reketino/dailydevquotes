@@ -15,12 +15,12 @@ export async function GET(req: Request) {
   const user = searchParams.get("user") ?? "guest";
   const theme = searchParams.get("theme") ?? "dark";
 
-  const [{ text, mood }, news] = await Promise.all([
-    getQuote(user),
-    getDevNews(user),
-  ]);
+  const quote = await getQuote(user);
+  const newsRaw = await getDevNews(user);
 
-  const shortNews = truncate(news, 90);
+  const text = quote?.text ?? "Fallback quote";
+  const mood = quote?.mood ?? "chaos"
+  const shortNews = truncate(newsRaw ?? "No news today", 90);
 
   const day = Math.floor(Date.now() / 86400000);
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
