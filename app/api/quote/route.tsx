@@ -38,7 +38,8 @@ export async function GET(req: Request) {
 
   const grain = grainByMood[mood];
 
-  return new ImageResponse(
+  return new ImageResponse
+  (
     <main
       style={{
         width: "100%",
