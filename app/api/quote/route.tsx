@@ -78,7 +78,7 @@ export async function GET(req: Request) {
         }}
       >
         <div style={{ fontSize: emojiSize, marginBottom: 24 }}>{emoji}</div>
-        <div style={{ marginBottom: 16 }}>HELLO TEXT</div>
+        <div style={{ marginBottom: 16 }}>{text}</div>
 
         <div
           style={{
