@@ -26,7 +26,10 @@ export async function GET(req: Request) {
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
   const emoji = emojis[emojiIndex];
 
-  const activeTheme = resolveTheme(theme);
+  const activeTheme = {
+    background: "black",
+    text: "white",
+  }
   const emojiSize = theme === "light" ? 48 : theme?.includes("tokyo") ? 60 : 56;
 
   const grainByMood: Record<Mood, { opacity: number }> = {
