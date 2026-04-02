@@ -72,11 +72,10 @@ export async function GET(req: Request) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 24,
         }}
       >
-        <div style={{ fontSize: emojiSize }}>{emoji}</div>
-        <div>“{text}”</div>
+        <div style={{ fontSize: emojiSize, marginBottom: 24 }}>{emoji}</div>
+        <div style={{ marginBottom: 16 }}>“{text}”</div>
 
         <div
           style={{
