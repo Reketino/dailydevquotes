@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@vercel/og": "^0.8.5",
-    "next": "16.0.10",
+    "baseline-browser-mapping": "^2.10.13",
+    "next": "^16.2.2",
     "react": "19.2.1",
     "react-dom": "19.2.1"
   },

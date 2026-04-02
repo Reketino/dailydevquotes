@@ -87,7 +87,7 @@ export async function GET(req: Request) {
             maxWidth: 900,
           }}
         >
-          📰 {shortNews}
+          NEWS: {shortNews}
         </div>
       </section>
 
