@@ -38,7 +38,7 @@ export async function GET(req: Request) {
 
   const grain = grainByMood[mood];
 
-  return new ImageResponse
+  return new ImageResponse(
   (
     <main
       style={{
@@ -101,7 +101,8 @@ export async function GET(req: Request) {
       >
         Reketino.dev 🐻
       </section>
-    </main>,
+    </main>
+    ),
     {
       width: 1200,
       height: 300,
