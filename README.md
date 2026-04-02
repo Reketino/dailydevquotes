@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- refactor route.ts
+- Debugging broken images (because of course they’re broken)
 
 ## 🐻 Author
 - Built by @Reketino
