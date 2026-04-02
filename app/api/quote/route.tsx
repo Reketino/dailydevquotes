@@ -24,7 +24,7 @@ export async function GET(req: Request) {
 
   const day = Math.floor(Date.now() / 86400000);
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
-  const emoji = emojis[emojiIndex];
+  const emoji = "🫡";
 
   const activeTheme = {
     background: "black",
