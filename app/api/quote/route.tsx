@@ -66,7 +66,7 @@ export async function GET(req: Request) {
           opacity: grain.opacity,
           pointerEvents: "none",
         }}
-      />
+      ></section>
       <section
         style={{
           display: "flex",
