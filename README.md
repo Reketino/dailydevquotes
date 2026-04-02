@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Debugging broken images (because of course they’re broken)
+- cleanText function to remove weird characters and emojis from quotes
 
 ## 🐻 Author
 - Built by @Reketino

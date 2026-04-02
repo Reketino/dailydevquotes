@@ -1,3 +1,8 @@
+export function cleanText(str: string, max = 90): string {
+  return str
+}
+
+
 export function truncate(str: string, max = 90): string {
   if (!str) return "";
 
