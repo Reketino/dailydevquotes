@@ -52,7 +52,7 @@ export async function GET(req: Request) {
         padding: 60,
         textAlign: "center",
         fontSize: 32,
-        fontFamily: "sans-serif",
+        fontFamily: "Inter",
         position: "relative",
       }}
     >
