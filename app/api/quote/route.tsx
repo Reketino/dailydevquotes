@@ -2,7 +2,7 @@ import { ImageResponse } from "@vercel/og";
 import { hash } from "@/lib/hash";
 import { getDevNews } from "@/lib/getDevNews";
 import { getQuote } from "@/lib/getQuote";
-import { truncate } from "@/lib/truncate";
+import { safeText } from "@/lib/safeText";
 import { resolveTheme } from "@/lib/theme";
 import type { Mood } from "@/lib/getQuote";
 
@@ -20,7 +20,7 @@ export async function GET(req: Request) {
 
   const text = quote?.text ?? "Fallback quote";
   const mood = quote?.mood ?? "chaos"
-  const shortNews = truncate(newsRaw ?? "No news today", 90);
+  const shortNews = safeText(newsRaw ?? "No news today", 90);
 
   const day = Math.floor(Date.now() / 86400000);
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
@@ -85,7 +85,7 @@ export async function GET(req: Request) {
             maxWidth: 900,
           }}
         >
-          NEWS
+          NEWS {shortNews}
         </div>
       </section>
 
