@@ -82,11 +82,12 @@ export async function GET(req: Request) {
           style={{
             fontSize: 20,
             opacity: 0.7,
-            maxWidth: 900,
+            maxWidth: 800,
+            wordWrap: "break-word",
+            overflow: "hidden",
           }}
         >
-          <span>NEWS</span> 
-          <span>{shortNews}</span>
+         NEWS: {shortNews}
         </div>
       </section>
 
