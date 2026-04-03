@@ -13,27 +13,27 @@ export async function getDevNews(user: string): Promise<string> {
 
     const ids: number[] = await idsRes.json();
 
-    if (!ids.length) {
+    if (!ids || ids.length === 0) {
       return "There ain't no dev news today aye";
     }
 
-    const currentDay = Math.floor(Date.now() / 86400000);
-    const limit = Math.min(ids.length, 20);
-    const index = hash(`news-${user}-${currentDay}`) % limit;
+    const day = Math.floor(Date.now() / 86400000);
+    const index = hash(`news-${user}-${day}`) % ids.length;
+    const id = ids[index] ?? ids[0];
 
     const storyRes = await fetch(
-      `https://hacker-news.firebaseio.com/v0/item/${ids[index]}.json`,
-      { next: { revalidate: 3600 } },
+    `https://hacker-news.firebaseio.com/v0/item/${id}.json`
     );
 
-    const story: HNStory = await storyRes.json();
+    const story = await storyRes.json();
 
     if (!story || typeof story.title !== "string") {
       return "There ain't no dev news today⛵";
     }
-
-    return story?.title ?? "No devs news today aye.";
-  } catch {
-    return "Dev world has retired today aye...";
-  }
-}
+  
+    return story.title;
+    } catch (err) {
+      console.log("HN ERROR:", err);
+      return "No dev news today"
+    }
+    } 
