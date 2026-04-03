@@ -22,7 +22,7 @@ export async function getDevNews(user: string): Promise<string> {
     const id = ids[index] ?? ids[0];
 
     const storyRes = await fetch(
-    `https://hacker-news.firebaseio.com/v0/item/${id}.json`
+      `https://hacker-news.firebaseio.com/v0/item/${id}.json`,
     );
 
     const story = await storyRes.json();
@@ -30,10 +30,10 @@ export async function getDevNews(user: string): Promise<string> {
     if (!story || typeof story.title !== "string") {
       return "There ain't no dev news today⛵";
     }
-  
+
     return story.title;
-    } catch (err) {
-      console.log("HN ERROR:", err);
-      return "No dev news today"
-    }
-    } 
+  } catch (err) {
+    console.log("HN ERROR:", err);
+    return "No dev news today";
+  }
+}
