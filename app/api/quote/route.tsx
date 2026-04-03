@@ -85,7 +85,8 @@ export async function GET(req: Request) {
             maxWidth: 900,
           }}
         >
-          NEWS {shortNews}
+          <span>NEWS</span> 
+          <span>{shortNews}</span>
         </div>
       </section>
 
