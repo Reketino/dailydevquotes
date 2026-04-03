@@ -1,14 +1,9 @@
-export function cleanText(str: string, max = 90): string {
+export function safeText(str: string, max = 90): string {
   return str
   .replace(/[^\x00-\x7F]/g, "")
   .replace(/&[a-z]+;/gi, "")
-  .slice(0, max)
-  .trim();
+  .trim()
+  .slice(0, max);
 }
 
 
-export function truncate(str: string, max = 90): string {
-  if (!str) return "";
-
-  return str.length > max ? str.slice(0, max) + "…" : str;
-}
