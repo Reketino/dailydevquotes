@@ -1,6 +1,7 @@
 export function cleanText(str: string, max = 90): string {
   return str
   .replace(/[^\x00-\x7F]/g, "")
+  .replace(/&[a-z]+;/gi, "")
 }
 
 
