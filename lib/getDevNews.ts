@@ -1,7 +1,13 @@
 import { hash } from "./hash";
 
-type HNStory = {
-  title?: string;
+type OkSurfResponse = {
+  data?: {
+    Techonology?: {
+      items?: {
+        title?: string;
+      }[];
+    };
+  };
 };
 
 export async function getDevNews(user: string): Promise<string> {
