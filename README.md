@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- cleanText function to remove weird characters and emojis from quotes
+- Refactor getdevnews with fetching from oksurf
 
 ## 🐻 Author
 - Built by @Reketino
