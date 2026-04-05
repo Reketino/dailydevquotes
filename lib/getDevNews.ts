@@ -4,7 +4,7 @@ type OkSurfResponse = {
   data?: {
     Techonology?: {
       items?: {
-        title?: string; 
+        title?: string;
       }[];
     };
   };
