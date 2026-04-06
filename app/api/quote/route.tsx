@@ -16,7 +16,7 @@ export async function GET(req: Request) {
   const theme = searchParams.get("theme") ?? "dark";
 
   const quote = await getQuote(user);
-  const newsRaw = await getDevNews(user);
+  const newsRaw = await getDevNews();
 
   const text = quote?.text ?? "Fallback quote";
   const mood = quote?.mood ?? "chaos"
