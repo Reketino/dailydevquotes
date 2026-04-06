@@ -23,7 +23,7 @@ export async function getDevNews(): Promise<string> {
       next: { revalidate: 3600 },
     });
 
-    const ids: number[] = await idsRes.json();
+    const json: OkSurfResponse = await res.json();
 
     if (!ids || ids.length === 0) {
       return "There ain't no dev news today aye";
