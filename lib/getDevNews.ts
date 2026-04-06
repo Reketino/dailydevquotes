@@ -33,15 +33,7 @@ export async function getDevNews(): Promise<string> {
     const day = Math.floor(Date.now() / 86400000);
     const index = day % items.length;
 
-    const storyRes = await fetch(
-      `https://hacker-news.firebaseio.com/v0/item/${id}.json`,
-    );
-
-    const story = await storyRes.json();
-
-    if (!story || typeof story.title !== "string") {
-      return "There ain't no dev news today⛵";
-    }
+  
 
     return story.title;
   } catch (err) {
