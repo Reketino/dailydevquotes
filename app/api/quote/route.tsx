@@ -77,8 +77,6 @@ export async function GET(req: Request) {
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
         <div>{text}</div>
         <div style={{ fontSize: 20, opacity: 0.7 }}>
-          <div>NEWS:</div>
-          <div>{shortNews}</div>
         </div>
       </section>
 
