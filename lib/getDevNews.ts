@@ -1,4 +1,4 @@
-import { hash } from "./hash";
+
 
 type OkSurfResponse = {
   data?: {
