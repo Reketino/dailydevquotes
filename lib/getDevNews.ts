@@ -35,9 +35,9 @@ export async function getDevNews(): Promise<string> {
 
   
 
-    return story.title;
+    return items[index]?.title ?? "No dev news today";
   } catch (err) {
-    console.log("HN ERROR:", err);
+    console.log("NEWS ERROR:", err);
     return "No dev news today";
   }
 }
