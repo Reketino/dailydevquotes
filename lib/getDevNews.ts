@@ -1,5 +1,3 @@
-
-
 type OkSurfResponse = {
   data?: {
     Techonology?: {
@@ -32,8 +30,6 @@ export async function getDevNews(): Promise<string> {
 
     const day = Math.floor(Date.now() / 86400000);
     const index = day % items.length;
-
-  
 
     return items[index]?.title ?? "No dev news today";
   } catch (err) {
