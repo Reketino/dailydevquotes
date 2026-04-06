@@ -19,12 +19,12 @@ export async function GET(req: Request) {
   const newsRaw = await getDevNews();
 
   const text = quote?.text ?? "Fallback quote";
-  const mood = quote?.mood ?? "chaos"
+  const mood = quote?.mood ?? "chaos";
   const shortNews = safeText(newsRaw || "No dev news today aye", 90);
 
   const day = Math.floor(Date.now() / 86400000);
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
-  const emoji = emojis[emojiIndex]
+  const emoji = emojis[emojiIndex];
 
   const activeTheme = resolveTheme(theme);
   const emojiSize = theme === "light" ? 48 : theme?.includes("tokyo") ? 60 : 56;
@@ -39,7 +39,6 @@ export async function GET(req: Request) {
   const grain = grainByMood[mood];
 
   return new ImageResponse(
-  (
     <main
       style={{
         width: "100%",
@@ -81,7 +80,6 @@ export async function GET(req: Request) {
           <div>NEWS:</div>
           <div>{shortNews}</div>
         </div>
-        
       </section>
 
       <section
@@ -96,8 +94,7 @@ export async function GET(req: Request) {
       >
         Reketino.dev 🐻
       </section>
-    </main>
-    ),
+    </main>,
     {
       width: 1200,
       height: 300,
