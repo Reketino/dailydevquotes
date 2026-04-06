@@ -10,12 +10,18 @@ type OkSurfResponse = {
   };
 };
 
-export async function getDevNews(user: string): Promise<string> {
+export async function getDevNews(): Promise<string> {
   try {
-    const idsRes = await fetch(
-      "https://hacker-news.firebaseio.com/v0/topstories.json",
-      { next: { revalidate: 3600 } },
-    );
+    const res = await fetch("https://ok.surf/api/news", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sections: ["Technology"]
+      }),
+      next: {revalidate: 3600 },
+    });
 
     const ids: number[] = await idsRes.json();
 
