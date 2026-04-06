@@ -20,7 +20,7 @@ export async function GET(req: Request) {
 
   const text = quote?.text ?? "Fallback quote";
   const mood = quote?.mood ?? "chaos"
-  const shortNews = safeText(newsRaw, 90);
+  const shortNews = safeText(newsRaw || "No dev news today aye", 90);
 
   const day = Math.floor(Date.now() / 86400000);
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
