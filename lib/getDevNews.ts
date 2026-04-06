@@ -18,9 +18,9 @@ export async function getDevNews(): Promise<string> {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        sections: ["Technology"]
+        sections: ["Technology"],
       }),
-      next: {revalidate: 3600 },
+      next: { revalidate: 3600 },
     });
 
     const ids: number[] = await idsRes.json();
