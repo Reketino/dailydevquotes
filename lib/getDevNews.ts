@@ -24,6 +24,7 @@ export async function getDevNews(): Promise<string> {
     });
 
     const json: OkSurfResponse = await res.json();
+    const items = json?.data?.Techonology?.items ?? [];
 
     if (!ids || ids.length === 0) {
       return "There ain't no dev news today aye";
