@@ -17,6 +17,14 @@ export async function GET(req: Request) {
 
   const quote = await getQuote(user);
   let newsRaw = "No dev news today";
+  try {
+    const result = await getDevNews();
+    if (typeof result === "string" && result.trim().length > 0) {
+      newsRaw = result;
+    }
+  } catch (e) {
+    
+  }
 
   const text = quote?.text ?? "Fallback quote";
   const mood = quote?.mood ?? "chaos";
