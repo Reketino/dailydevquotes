@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Refactor getdevnews with fetching from oksurf
+- Refactor wrap call in route
 
 ## 🐻 Author
 - Built by @Reketino

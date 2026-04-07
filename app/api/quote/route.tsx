@@ -16,7 +16,15 @@ export async function GET(req: Request) {
   const theme = searchParams.get("theme") ?? "dark";
 
   const quote = await getQuote(user);
-  const newsRaw = await getDevNews();
+  let newsRaw = "No dev news today";
+  try {
+    const result = await getDevNews();
+    if (typeof result === "string" && result.trim().length > 0) {
+      newsRaw = result;
+    }
+  } catch (e) {
+    console.log("NEWS FAILED AS USUAL:", e);
+  }
 
   const text = quote?.text ?? "Fallback quote";
   const mood = quote?.mood ?? "chaos";
@@ -76,8 +84,7 @@ export async function GET(req: Request) {
       >
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
         <div>{text}</div>
-        <div style={{ fontSize: 20, opacity: 0.7 }}>
-        </div>
+        <div style={{ fontSize: 20, opacity: 0.7 }}></div>
       </section>
 
       <section
