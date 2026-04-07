@@ -23,7 +23,7 @@ export async function GET(req: Request) {
       newsRaw = result;
     }
   } catch (e) {
-    console.log("NEWS FAILED AS USUAL:", e)
+    console.log("NEWS FAILED AS USUAL:", e);
   }
 
   const text = quote?.text ?? "Fallback quote";
