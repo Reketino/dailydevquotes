@@ -15,9 +15,7 @@ export async function getDevNews(): Promise<string> {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        sections: ["Technology"],
-      }),
+      body: JSON.stringify({ sections: ["Technology"] }),
       next: { revalidate: 3600 },
     });
 
