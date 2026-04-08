@@ -1,6 +1,6 @@
 type OkSurfResponse = {
   data?: {
-    Techonology?: {
+    Technology?: {
       items?: {
         title?: string;
       }[];
@@ -15,14 +15,12 @@ export async function getDevNews(): Promise<string> {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        sections: ["Technology"],
-      }),
+      body: JSON.stringify({ sections: ["Technology"] }),
       next: { revalidate: 3600 },
     });
 
     const json: OkSurfResponse = await res.json();
-    const items = json?.data?.Techonology?.items ?? [];
+    const items = json?.data?.Technology?.items ?? [];
 
     if (!items.length) {
       return "There ain't no dev news today aye";
