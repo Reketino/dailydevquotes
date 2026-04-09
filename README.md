@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Refactor wrap call in route
+- Adding Timeout protection in getDevNews
 
 ## 🐻 Author
 - Built by @Reketino
