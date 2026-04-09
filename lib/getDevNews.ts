@@ -10,6 +10,8 @@ type OkSurfResponse = {
 
 export async function getDevNews(): Promise<string> {
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 2000)
     const res = await fetch("https://ok.surf/api/news", {
       method: "POST",
       headers: {
