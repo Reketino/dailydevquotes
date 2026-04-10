@@ -11,7 +11,7 @@ type OkSurfResponse = {
 export async function getDevNews(): Promise<string> {
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 2000)
+    const timeout = setTimeout(() => controller.abort(), 2000);
     const res = await fetch("https://ok.surf/api/news", {
       method: "POST",
       headers: {
@@ -20,6 +20,7 @@ export async function getDevNews(): Promise<string> {
       body: JSON.stringify({ sections: ["Technology"] }),
       next: { revalidate: 3600 },
     });
+    clearTimeout(timeout);
 
     const json: OkSurfResponse = await res.json();
     const items = json?.data?.Technology?.items ?? [];
