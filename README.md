@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Adding Timeout protection in getDevNews
+- Make devNews work with OG Image
 
 ## 🐻 Author
 - Built by @Reketino
