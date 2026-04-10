@@ -20,6 +20,7 @@ export async function getDevNews(): Promise<string> {
       body: JSON.stringify({ sections: ["Technology"] }),
       next: { revalidate: 3600 },
     });
+    clearTimeout(timeout);
 
     const json: OkSurfResponse = await res.json();
     const items = json?.data?.Technology?.items ?? [];
