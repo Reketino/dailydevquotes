@@ -83,9 +83,9 @@ export async function GET(req: Request) {
         }}
       >
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
-        <div style={{ fontSize: 18, opacity: 0.6 }}>{mood.toUpperCase()}</div>
         <div>{text}</div>
-        <div style={{ fontSize: 20, opacity: 0.7 }}></div>
+        <div style={{ fontSize: 18, opacity: 0.6 }}>{mood.toUpperCase()}</div>
+        <div style={{ fontSize: 20, opacity: 0.7 }}>{shortNews}</div>
       </section>
 
       <section
