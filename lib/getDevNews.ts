@@ -22,7 +22,7 @@ export async function getDevNews(): Promise<string> {
     console.log("STATUS:", res.status);
     console.log("CONTENT TYPE:", res.headers.get("content-type"));
 
-    const json: OkSurfResponse = await res.json();
+    const json = await res.json();
     console.log("OKSURF RESPONSE:")
     console.log(JSON.stringify(json, null, 2));
     const items = json?.data?.Technology?.items ?? [];
