@@ -18,6 +18,7 @@ export async function getDevNews(): Promise<string> {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ sections: ["Technology"] }),
+      signal: controller.signal,
       next: { revalidate: 3600 },
     });
     clearTimeout(timeout);
