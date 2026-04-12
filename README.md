@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Make devNews work with OG Image
+- Refactor getDevNews
 
 ## 🐻 Author
 - Built by @Reketino
