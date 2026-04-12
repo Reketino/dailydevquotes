@@ -21,6 +21,8 @@ export async function getDevNews(): Promise<string> {
       next: { revalidate: 3600 },
     });
     clearTimeout(timeout);
+    console.log("STATUS:", res.status);
+    console.log("CONTENT TYPE:", res.headers.get("content-type"));
 
     const json: OkSurfResponse = await res.json();
     console.log("OKSURF RESPONSE:")
