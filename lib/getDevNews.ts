@@ -1,12 +1,3 @@
-type OkSurfResponse = {
-  data?: {
-    Technology?: {
-      items?: {
-        title?: string;
-      }[];
-    };
-  };
-};
 
 export async function getDevNews(): Promise<string> {
   try {
