@@ -18,6 +18,7 @@ export async function getDevNews(): Promise<string> {
       signal: controller.signal,
       next: { revalidate: 3600 },
     });
+    
     clearTimeout(timeout);
     console.log("STATUS:", res.status);
     console.log("CONTENT TYPE:", res.headers.get("content-type"));
@@ -25,8 +26,11 @@ export async function getDevNews(): Promise<string> {
     const json = await res.json();
     console.log("OKSURF RESPONSE:")
     console.log(JSON.stringify(json, null, 2));
-    const items = json?.data?.Technology?.items ?? [];
 
+    const items = 
+    json?.data?.Technology?.items ?? 
+    json?.data?.items ??
+    [];
     if (!items.length) {
       return "There ain't no dev news today aye";
     }
