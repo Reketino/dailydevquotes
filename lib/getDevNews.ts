@@ -23,6 +23,8 @@ export async function getDevNews(): Promise<string> {
     clearTimeout(timeout);
 
     const json: OkSurfResponse = await res.json();
+    console.log("OKSURF RESPONSE:")
+    console.log(JSON.stringify(json, null, 2));
     const items = json?.data?.Technology?.items ?? [];
 
     if (!items.length) {
