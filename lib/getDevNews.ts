@@ -1,18 +1,15 @@
-
 export async function getDevNews(): Promise<string> {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 2000);
-    const res = await fetch(
-      "https://ok.surf/api/v1/cors/news-section", 
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          sections: ["Technology"],
-        }),
+    const res = await fetch("https://ok.surf/api/v1/cors/news-section", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sections: ["Technology"],
+      }),
       signal: controller.signal,
       next: { revalidate: 3600 },
     });
