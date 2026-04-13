@@ -88,6 +88,7 @@ export async function GET(req: Request) {
         style={{ 
           fontSize: 20,
           maxWidth:800, 
+          lineHeight: 1.4,
           }}
           >
             {shortNews}
