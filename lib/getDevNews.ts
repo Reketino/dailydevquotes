@@ -4,6 +4,10 @@ type NewsItem = {
   source?: string;
 };
 
+type OkSurfResponse = {
+  Technology?: NewsItem
+}
+
 function isDevNews(title: string) {
   const t = title.toLowerCase()
 
