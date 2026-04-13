@@ -4,6 +4,7 @@ import { getDevNews } from "@/lib/getDevNews";
 import { getQuote } from "@/lib/getQuote";
 import { safeText } from "@/lib/safeText";
 import { resolveTheme } from "@/lib/theme";
+import { getDomain } from "@/lib/getDomain";
 import type { Mood } from "@/lib/getQuote";
 
 export const runtime = "edge";
@@ -16,15 +17,7 @@ export async function GET(req: Request) {
   const theme = searchParams.get("theme") ?? "dark";
 
   const quote = await getQuote(user);
-  let newsRaw = "No dev news today";
-  try {
-    const result = await getDevNews();
-    if (typeof result === "string" && result.trim().length > 0) {
-      newsRaw = result;
-    }
-  } catch (e) {
-    console.log("NEWS FAILED AS USUAL:", e);
-  }
+  const news = await getDevNews();
 
   const text = quote?.text ?? "Fallback quote";
   const mood = quote?.mood ?? "chaos";
