@@ -1,3 +1,8 @@
+function isDevNews(title: string) {
+  const t = title.toLowerCase
+}
+
+
 export async function getDevNews(): Promise<string> {
   try {
     const controller = new AbortController();
