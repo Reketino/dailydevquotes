@@ -1,5 +1,14 @@
 function isDevNews(title: string) {
   const t = title.toLowerCase
+
+  return (
+    t.includes("ai") ||
+    t.includes("developer") ||
+    t.includes("software") ||
+    t.includes("programming") ||
+    t.includes("code") ||
+    t.includes("security") ||
+  )
 }
 
 
