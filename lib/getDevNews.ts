@@ -5,7 +5,7 @@ type NewsItem = {
 };
 
 type OkSurfResponse = {
-  Technology?: NewsItem
+  Technology?: NewsItem[];
 }
 
 function isDevNews(title: string) {
@@ -45,6 +45,12 @@ export async function getDevNews(): Promise<string> {
     if (!Array.isArray(items) || items.length === 0) {
       return "There ain't no dev news today aye";
     }
+
+    const filtered = items.filter(item =>
+      isDevNews(item?.title ?? "")
+    );
+
+    const list = filtered.length > 0 ? filtered : items
 
     const day = Math.floor(Date.now() / 86400000);
     const index = day % items.length;
