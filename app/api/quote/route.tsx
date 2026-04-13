@@ -75,16 +75,21 @@ export async function GET(req: Request) {
           gap: 24,
         }}
       >
-        <div style={{ fontSize: 16, opacity: 0.6}}>
-          Dev Quotes
-        </div>
+        <div style={{ fontSize: 16, opacity: 0.6 }}>Dev Quotes</div>
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
         <div>{text}</div>
-  
-          <div style={{ fontSize: 16, opacity: 0.6}}>
-          Dev News
-        </div>  
-        <div style={{ fontSize: 20 }}>{shortNews}</div>
+
+        <div style={{ fontSize: 16, opacity: 0.6 }}>Dev News</div>
+        <div
+          style={{
+            fontSize: 20,
+            maxWidth: 800,
+            lineHeight: 1.4,
+            wordWrap: "break-word",
+          }}
+        >
+          {shortNews}
+        </div>
       </section>
 
       <section
