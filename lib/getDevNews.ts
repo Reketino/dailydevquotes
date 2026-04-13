@@ -1,3 +1,9 @@
+type NewsItem = {
+  title: string;
+  link?: string;
+  source?: string;
+};
+
 function isDevNews(title: string) {
   const t = title.toLowerCase()
 
