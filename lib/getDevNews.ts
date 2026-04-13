@@ -1,5 +1,5 @@
 function isDevNews(title: string) {
-  const t = title.toLowerCase
+  const t = title.toLowerCase()
 
   return (
     t.includes("ai") ||
@@ -7,10 +7,9 @@ function isDevNews(title: string) {
     t.includes("software") ||
     t.includes("programming") ||
     t.includes("code") ||
-    t.includes("security") ||
-  )
+    t.includes("security") 
+  );
 }
-
 
 export async function getDevNews(): Promise<string> {
   try {
