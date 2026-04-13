@@ -4,6 +4,7 @@ import { getDevNews } from "@/lib/getDevNews";
 import { getQuote } from "@/lib/getQuote";
 import { safeText } from "@/lib/safeText";
 import { resolveTheme } from "@/lib/theme";
+import { getDomain } from "@/lib/getDomain";
 import type { Mood } from "@/lib/getQuote";
 
 export const runtime = "edge";
@@ -16,19 +17,11 @@ export async function GET(req: Request) {
   const theme = searchParams.get("theme") ?? "dark";
 
   const quote = await getQuote(user);
-  let newsRaw = "No dev news today";
-  try {
-    const result = await getDevNews();
-    if (typeof result === "string" && result.trim().length > 0) {
-      newsRaw = result;
-    }
-  } catch (e) {
-    console.log("NEWS FAILED AS USUAL:", e);
-  }
+  const news = await getDevNews();
 
   const text = quote?.text ?? "Fallback quote";
   const mood = quote?.mood ?? "chaos";
-  const shortNews = safeText(newsRaw || "No dev news today aye", 90);
+  const shortNews = safeText(news.title, 90);
 
   const day = Math.floor(Date.now() / 86400000);
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
@@ -82,10 +75,16 @@ export async function GET(req: Request) {
           gap: 24,
         }}
       >
+        <div style={{ fontSize: 16, opacity: 0.6}}>
+          Dev Quotes
+        </div>
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
         <div>{text}</div>
-        <div style={{ fontSize: 18, opacity: 0.6 }}>{mood.toUpperCase()}</div>
-        <div style={{ fontSize: 20, opacity: 0.7 }}>{shortNews}</div>
+  
+          <div style={{ fontSize: 16, opacity: 0.6}}>
+          Dev News
+        </div>  
+        <div style={{ fontSize: 20 }}>{shortNews}</div>
       </section>
 
       <section
