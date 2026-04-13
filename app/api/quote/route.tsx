@@ -84,7 +84,14 @@ export async function GET(req: Request) {
           <div style={{ fontSize: 16, opacity: 0.6}}>
           Dev News
         </div>  
-        <div style={{ fontSize: 20 }}>{shortNews}</div>
+        <div 
+        style={{ 
+          fontSize: 20,
+          maxWidth:800, 
+          }}
+          >
+            {shortNews}
+            </div>
       </section>
 
       <section
