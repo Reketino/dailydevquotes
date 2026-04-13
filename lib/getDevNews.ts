@@ -21,7 +21,7 @@ function isDevNews(title: string) {
   );
 }
 
-export async function getDevNews(): Promise<string> {
+export async function getDevNews(): Promise<NewsItem> {
   try {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 2000);
@@ -43,7 +43,7 @@ export async function getDevNews(): Promise<string> {
     const items = json?.Technology ?? [];
 
     if (!Array.isArray(items) || items.length === 0) {
-      return "There ain't no dev news today aye";
+      return { title: "There ain't no dev news today aye "};
     }
 
     const filtered = items.filter(item =>
@@ -53,11 +53,11 @@ export async function getDevNews(): Promise<string> {
     const list = filtered.length > 0 ? filtered : items;
 
     const day = Math.floor(Date.now() / 86400000);
-    const index = day % items.length;
+    const index = day % list.length;
 
-    return list[index]?.title ?? "No dev news today";
+    return list[index] ?? { title: "No dev news today"};
   } catch (err) {
     console.log("NEWS ERROR:", err);
-    return "No dev news today";
+    return { title: "No dev news today" };
   }
 }
