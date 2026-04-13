@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Refactor getDevNews
+- getDomain script
 
 ## 🐻 Author
 - Built by @Reketino
