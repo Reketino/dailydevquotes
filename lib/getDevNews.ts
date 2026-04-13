@@ -39,7 +39,7 @@ export async function getDevNews(): Promise<string> {
 
     clearTimeout(timeout);
 
-    const json = await res.json();
+    const json: OkSurfResponse = await res.json();
     const items = json?.Technology ?? [];
 
     if (!Array.isArray(items) || items.length === 0) {
