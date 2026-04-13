@@ -50,12 +50,12 @@ export async function getDevNews(): Promise<string> {
       isDevNews(item?.title ?? "")
     );
 
-    const list = filtered.length > 0 ? filtered : items
+    const list = filtered.length > 0 ? filtered : items;
 
     const day = Math.floor(Date.now() / 86400000);
     const index = day % items.length;
 
-    return items[index]?.title ?? "No dev news today";
+    return list[index]?.title ?? "No dev news today";
   } catch (err) {
     console.log("NEWS ERROR:", err);
     return "No dev news today";
