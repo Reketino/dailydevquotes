@@ -93,11 +93,11 @@ export async function GET(req: Request) {
         </div>
         {domain && (
           <div
-          style={{
-            fontSize: 14,
-            opacity: 0.5,
-            marginTop: 6,
-          }}
+            style={{
+              fontSize: 14,
+              opacity: 0.5,
+              marginTop: 6,
+            }}
           >
             🌐 {domain}
           </div>
