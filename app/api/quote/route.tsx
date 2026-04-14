@@ -22,6 +22,7 @@ export async function GET(req: Request) {
   const text = quote?.text ?? "Fallback quote";
   const mood = quote?.mood ?? "chaos";
   const shortNews = safeText(news.title, 90);
+  const domain = getDomain(news.link);
 
   const day = Math.floor(Date.now() / 86400000);
   const emojiIndex = hash(`emoji-${user}-${day}`) % emojis.length;
