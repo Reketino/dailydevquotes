@@ -91,6 +91,17 @@ export async function GET(req: Request) {
         >
           {shortNews}
         </div>
+        {domain && (
+          <div
+          style={{
+            fontSize: 14,
+            opacity: 0.5,
+            marginTop: 6,
+          }}
+          >
+            🌐 {domain}
+          </div>
+        )}
       </section>
 
       <section
