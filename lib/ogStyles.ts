@@ -8,7 +8,9 @@ export const textBase = {
     display: "flex",
 };
 
-export const labelText = {};
+export const labelText = {
+    ...textBase,
+};
 
 export const newsText = {};
 
