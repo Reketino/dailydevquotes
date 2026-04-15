@@ -82,7 +82,7 @@ export async function GET(req: Request) {
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
         <div>{text}</div>
 
-        <div style={{ fontSize: 16, opacity: 0.6 }}>
+        <div style={{ fontSize: 16, opacity: 0.6, letterSpacing: "0.08em" }}>
         Dev News
         </div>
         <div 
