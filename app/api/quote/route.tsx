@@ -92,6 +92,7 @@ export async function GET(req: Request) {
           gap: 6,
           maxWidth: 800,
         }}
+        >
         <div
           style={{
             fontSize: 20,
@@ -111,6 +112,7 @@ export async function GET(req: Request) {
             🌐 {domain}
           </div>
         )}
+        </div>
       </section>
 
       <section
