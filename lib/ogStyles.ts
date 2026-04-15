@@ -11,6 +11,7 @@ export const textBase = {
 export const labelText = {
     ...textBase,
     fontSize: 16,
+    opacity: 0.6,
 };
 
 export const newsText = {};
