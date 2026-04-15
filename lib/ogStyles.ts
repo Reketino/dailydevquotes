@@ -10,6 +10,7 @@ export const textBase = {
 
 export const labelText = {
     ...textBase,
+    fontSize: 16,
 };
 
 export const newsText = {};
