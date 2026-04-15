@@ -77,7 +77,9 @@ export async function GET(req: Request) {
           maxWidth: 800,
         }}
       >
-        <div style={{ fontSize: 16, opacity: 0.6 }}>Dev Quotes</div>
+        <div style={{ fontSize: 16, opacity: 0.6 }}>
+          Dev Quotes
+          </div>
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
         <div>{text}</div>
 
