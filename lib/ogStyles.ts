@@ -4,9 +4,14 @@ export const flexColCenter = {
   alignItems: "center",
 };
 
-export const textBase = {};
+export const textBase = {
+    display: "flex",
+};
 
-export const labelText = {};
+export const labelText = {
+    ...textBase,
+    fontSize: 16,
+};
 
 export const newsText = {};
 
