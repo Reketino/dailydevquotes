@@ -73,7 +73,8 @@ export async function GET(req: Request) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 24,
+          gap: 6,
+          maxWidth: 800,
         }}
       >
         <div style={{ fontSize: 16, opacity: 0.6 }}>Dev Quotes</div>
@@ -84,7 +85,6 @@ export async function GET(req: Request) {
         <div
           style={{
             fontSize: 20,
-            maxWidth: 800,
             lineHeight: 1.4,
             wordWrap: "break-word",
           }}
@@ -96,7 +96,6 @@ export async function GET(req: Request) {
             style={{
               fontSize: 14,
               opacity: 0.5,
-              marginTop: 6,
             }}
           >
             🌐 {domain}
