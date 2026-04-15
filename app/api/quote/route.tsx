@@ -84,7 +84,7 @@ export async function GET(req: Request) {
           {text}
           </div>
 
-        <div style={{ fontSize: 16, opacity: 0.6, letterSpacing: "0.08em" }}>
+        <div style={{ display: "flex", fontSize: 16, opacity: 0.6, letterSpacing: "0.08em" }}>
         Dev News
         </div>
         <div 
