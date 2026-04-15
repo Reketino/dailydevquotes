@@ -15,3 +15,7 @@ export const labelText = {
 export const newsText = {
     
 }
+
+export const domainText = {
+    
+}
