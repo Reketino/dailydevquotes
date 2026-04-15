@@ -4,7 +4,9 @@ export const flexColCenter = {
   alignItems: "center",
 };
 
-export const textBase = {};
+export const textBase = {
+    display: "flex",
+};
 
 export const labelText = {};
 
