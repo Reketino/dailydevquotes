@@ -50,7 +50,7 @@ export async function GET(req: Request) {
         justifyContent: "center",
         background: activeTheme.background,
         color: activeTheme.text,
-        padding: 60,
+        padding: "60px 60px 80px 60px",
         textAlign: "center",
         fontSize: 32,
         fontFamily: "Inter",
@@ -76,13 +76,15 @@ export async function GET(req: Request) {
           gap: 25,
         }}
       >
-        <div style={{ fontSize: 16, opacity: 0.6 }}>
+        <div style={{ display: "flex", fontSize: 16, opacity: 0.6 }}>
           Dev Quotes
           </div>
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
-        <div>{text}</div>
+        <div style={{ display: "flex" }}>
+          {text}
+          </div>
 
-        <div style={{ fontSize: 16, opacity: 0.6 }}>
+        <div style={{ display: "flex", fontSize: 16, opacity: 0.6, letterSpacing: "0.08em" }}>
         Dev News
         </div>
         <div 
@@ -96,8 +98,9 @@ export async function GET(req: Request) {
         >
         <div
           style={{
+            display: "flex",
             fontSize: 20,
-            lineHeight: 1.4,
+            lineHeight: 1.5,
             wordWrap: "break-word",
           }}
         >
@@ -106,6 +109,7 @@ export async function GET(req: Request) {
         {domain && (
           <div
             style={{
+              display: "flex",
               fontSize: 14,
               opacity: 0.5,
             }}
