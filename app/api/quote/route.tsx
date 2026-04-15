@@ -73,8 +73,7 @@ export async function GET(req: Request) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: 6,
-          maxWidth: 800,
+          gap: 25,
         }}
       >
         <div style={{ fontSize: 16, opacity: 0.6 }}>
