@@ -9,5 +9,9 @@ export const textBase = {
 }
 
 export const labelText = {
+
+}
+
+export const newsText = {
     
 }
