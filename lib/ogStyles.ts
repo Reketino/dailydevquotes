@@ -5,5 +5,9 @@ alignItems: "center",
 };
 
 export const textBase = {
+
+}
+
+export const labelText = {
     
 }
