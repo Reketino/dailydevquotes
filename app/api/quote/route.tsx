@@ -97,7 +97,7 @@ export async function GET(req: Request) {
         <div
           style={{
             fontSize: 20,
-            lineHeight: 1.4,
+            lineHeight: 1.5,
             wordWrap: "break-word",
           }}
         >
