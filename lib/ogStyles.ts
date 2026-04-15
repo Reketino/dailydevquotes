@@ -3,3 +3,7 @@ display: "flex",
 flexDirection: "column",
 alignItems: "center",
 };
+
+export const textBase = {
+    
+}
