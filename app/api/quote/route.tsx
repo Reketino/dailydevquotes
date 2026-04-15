@@ -109,6 +109,7 @@ export async function GET(req: Request) {
         {domain && (
           <div
             style={{
+              display: "flex",
               fontSize: 14,
               opacity: 0.5,
             }}
