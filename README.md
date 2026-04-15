@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- getDomain script
+- Adding Reusable styles in ogStyles
 
 ## 🐻 Author
 - Built by @Reketino
