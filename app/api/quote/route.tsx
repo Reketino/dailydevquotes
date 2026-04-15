@@ -80,7 +80,9 @@ export async function GET(req: Request) {
           Dev Quotes
           </div>
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
-        <div>{text}</div>
+        <div style={{ display: "flex" }}>
+          {text}
+          </div>
 
         <div style={{ fontSize: 16, opacity: 0.6, letterSpacing: "0.08em" }}>
         Dev News
