@@ -50,7 +50,7 @@ export async function GET(req: Request) {
         justifyContent: "center",
         background: activeTheme.background,
         color: activeTheme.text,
-        padding: 60,
+        padding: "60px 60px 80px 60px",
         textAlign: "center",
         fontSize: 32,
         fontFamily: "Inter",
