@@ -6,6 +6,13 @@ import { safeText } from "@/lib/safeText";
 import { resolveTheme } from "@/lib/theme";
 import { getDomain } from "@/lib/getDomain";
 import type { Mood } from "@/lib/getQuote";
+import {
+  flexColCenter,
+  textBase,
+  labelText,
+  newsText,
+  domainText,
+} from "@/lib/ogStyles"
 
 export const runtime = "edge";
 
