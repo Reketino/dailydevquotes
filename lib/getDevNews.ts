@@ -6,10 +6,10 @@ type NewsItem = {
 
 type OkSurfResponse = {
   Technology?: NewsItem[];
-}
+};
 
 function isDevNews(title: string) {
-  const t = title.toLowerCase()
+  const t = title.toLowerCase();
 
   return (
     t.includes("ai") ||
@@ -17,7 +17,7 @@ function isDevNews(title: string) {
     t.includes("software") ||
     t.includes("programming") ||
     t.includes("code") ||
-    t.includes("security") 
+    t.includes("security")
   );
 }
 
@@ -43,19 +43,17 @@ export async function getDevNews(): Promise<NewsItem> {
     const items = json?.Technology ?? [];
 
     if (!Array.isArray(items) || items.length === 0) {
-      return { title: "There ain't no dev news today aye "};
+      return { title: "There ain't no dev news today aye " };
     }
 
-    const filtered = items.filter(item =>
-      isDevNews(item?.title ?? "")
-    );
+    const filtered = items.filter((item) => isDevNews(item?.title ?? ""));
 
     const list = filtered.length > 0 ? filtered : items;
 
     const day = Math.floor(Date.now() / 86400000);
     const index = day % list.length;
 
-    return list[index] ?? { title: "No dev news today"};
+    return list[index] ?? { title: "No dev news today" };
   } catch (err) {
     console.log("NEWS ERROR:", err);
     return { title: "No dev news today" };
