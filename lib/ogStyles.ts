@@ -15,6 +15,11 @@ export const labelText = {
     letterSpacing: "0.08em",
 };
 
-export const newsText = {};
+export const newsText = {
+    ...textBase,
+    fontSize: 20,
+    lineheight: 1.5,
+    wordWrap: "break-word"
+};
 
 export const domainText = {};
