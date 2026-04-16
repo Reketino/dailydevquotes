@@ -22,4 +22,8 @@ export const newsText = {
     wordWrap: "break-word"
 };
 
-export const domainText = {};
+export const domainText = {
+    ...textBase,
+    fontSize: 14,
+    opacity: 0.5,
+};
