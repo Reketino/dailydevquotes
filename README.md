@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Refactor route w/ OGstyles
+- Adding ogStyles to route elements
 
 ## 🐻 Author
 - Built by @Reketino
