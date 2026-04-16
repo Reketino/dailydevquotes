@@ -12,7 +12,7 @@ import {
   labelText,
   newsText,
   domainText,
-} from "@/lib/ogStyles"
+} from "@/lib/ogStyles";
 
 export const runtime = "edge";
 
@@ -85,45 +85,50 @@ export async function GET(req: Request) {
       >
         <div style={{ display: "flex", fontSize: 16, opacity: 0.6 }}>
           Dev Quotes
-          </div>
-        <div style={{ fontSize: emojiSize }}>{emoji}</div>
-        <div style={{ display: "flex" }}>
-          {text}
-          </div>
-
-        <div style={{ display: "flex", fontSize: 16, opacity: 0.6, letterSpacing: "0.08em" }}>
-        Dev News
         </div>
-        <div 
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: 6,
-          maxWidth: 800,
-        }}
-        >
+        <div style={{ fontSize: emojiSize }}>{emoji}</div>
+        <div style={{ display: "flex" }}>{text}</div>
+
         <div
           style={{
             display: "flex",
-            fontSize: 20,
-            lineHeight: 1.5,
-            wordWrap: "break-word",
+            fontSize: 16,
+            opacity: 0.6,
+            letterSpacing: "0.08em",
           }}
         >
-          {shortNews}
+          Dev News
         </div>
-        {domain && (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 6,
+            maxWidth: 800,
+          }}
+        >
           <div
             style={{
               display: "flex",
-              fontSize: 14,
-              opacity: 0.5,
+              fontSize: 20,
+              lineHeight: 1.5,
+              wordWrap: "break-word",
             }}
           >
-            🌐 {domain}
+            {shortNews}
           </div>
-        )}
+          {domain && (
+            <div
+              style={{
+                display: "flex",
+                fontSize: 14,
+                opacity: 0.5,
+              }}
+            >
+              🌐 {domain}
+            </div>
+          )}
         </div>
       </section>
 
