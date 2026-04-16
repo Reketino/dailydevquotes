@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Adding Reusable styles in ogStyles
+- Adding ogStyles to route elements
 
 ## 🐻 Author
 - Built by @Reketino
