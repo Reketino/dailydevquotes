@@ -104,16 +104,7 @@ export async function GET(req: Request) {
             maxWidth: 800,
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              fontSize: 20,
-              lineHeight: 1.5,
-              wordWrap: "break-word",
-            }}
-          >
-            {shortNews}
-          </div>
+          <div style={newsText}>{shortNews}</div>
           {domain && (
             <div
               style={{
