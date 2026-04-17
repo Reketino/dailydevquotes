@@ -1,3 +1,5 @@
+import type { CSSProperties } from "react";
+
 export const flexColCenter = {
   display: "flex",
   flexDirection: "column",
