@@ -86,17 +86,11 @@ export async function GET(req: Request) {
         }}
       >
         <div style={labelText}>Dev Quotes</div>
-        <div style={{ fontSize: emojiSize }}>{emoji}</div>
+        <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
         <div style={textBase}>{text}</div>
 
         <div style={labelText}>Dev News</div>
-        <div
-          style={{
-            ...flexColCenter,
-            gap: 6,
-            maxWidth: 800,
-          }}
-        >
+        <div style={newsWrapper}>
           <div style={newsText}>{shortNews}</div>
           {domain && <div style={domainText}>🌐 {domain}</div>}
         </div>
