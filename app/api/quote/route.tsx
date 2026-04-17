@@ -99,9 +99,7 @@ export async function GET(req: Request) {
         </div>
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
+            ...flexColCenter,
             gap: 6,
             maxWidth: 800,
           }}
