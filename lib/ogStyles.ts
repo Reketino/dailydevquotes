@@ -21,7 +21,7 @@ export const newsText: CSSProperties = {
   ...textBase,
   fontSize: 20,
   lineHeight: 1.5,
-  wordWrap: "break-word",
+  overflowWrap: "break-word",
 };
 
 export const domainText: CSSProperties = {
