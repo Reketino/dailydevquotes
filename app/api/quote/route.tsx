@@ -105,17 +105,7 @@ export async function GET(req: Request) {
           }}
         >
           <div style={newsText}>{shortNews}</div>
-          {domain && (
-            <div
-              style={{
-                display: "flex",
-                fontSize: 14,
-                opacity: 0.5,
-              }}
-            >
-              🌐 {domain}
-            </div>
-          )}
+          {domain && <div style={domainText}>🌐 {domain}</div>}
         </div>
       </section>
 
