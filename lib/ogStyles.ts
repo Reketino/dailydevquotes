@@ -24,7 +24,7 @@ export const newsText: CSSProperties = {
   wordWrap: "break-word",
 };
 
-export const domainText = {
+export const domainText: CSSProperties = {
   ...textBase,
   fontSize: 14,
   opacity: 0.5,
