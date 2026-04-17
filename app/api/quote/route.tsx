@@ -12,6 +12,8 @@ import {
   labelText,
   newsText,
   domainText,
+  newsWrapper,
+  quoteText,
 } from "@/lib/ogStyles";
 
 export const runtime = "edge";
