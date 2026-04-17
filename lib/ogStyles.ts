@@ -17,7 +17,7 @@ export const labelText: CSSProperties = {
   letterSpacing: "0.08em",
 };
 
-export const newsText = {
+export const newsText: CSSProperties = {
   ...textBase,
   fontSize: 20,
   lineheight: 1.5,
