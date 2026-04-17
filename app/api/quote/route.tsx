@@ -12,6 +12,8 @@ import {
   labelText,
   newsText,
   domainText,
+  newsWrapper,
+  quoteText,
 } from "@/lib/ogStyles";
 
 export const runtime = "edge";
@@ -87,16 +89,7 @@ export async function GET(req: Request) {
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
         <div style={textBase}>{text}</div>
 
-        <div
-          style={{
-            display: "flex",
-            fontSize: 16,
-            opacity: 0.6,
-            letterSpacing: "0.08em",
-          }}
-        >
-          Dev News
-        </div>
+        <div style={labelText}>Dev News</div>
         <div
           style={{
             ...flexColCenter,

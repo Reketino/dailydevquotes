@@ -17,11 +17,21 @@ export const labelText: CSSProperties = {
   letterSpacing: "0.08em",
 };
 
+export const quoteText: CSSProperties = {
+  ... textBase,
+}
+
+export const newsWrapper: CSSProperties = {
+  ...flexColCenter,
+  gap: 6,
+  maxWidth: 800,
+}
+
 export const newsText: CSSProperties = {
   ...textBase,
   fontSize: 20,
   lineHeight: 1.5,
-  wordWrap: "break-word",
+  overflowWrap: "break-word",
 };
 
 export const domainText: CSSProperties = {
