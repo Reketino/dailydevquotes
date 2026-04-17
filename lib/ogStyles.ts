@@ -20,7 +20,7 @@ export const labelText: CSSProperties = {
 export const newsText: CSSProperties = {
   ...textBase,
   fontSize: 20,
-  lineheight: 1.5,
+  lineHeight: 1.5,
   wordWrap: "break-word",
 };
 
