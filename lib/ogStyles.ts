@@ -21,6 +21,12 @@ export const quoteText: CSSProperties = {
   ... textBase,
 }
 
+export const newsWrapper: CSSProperties = {
+  ...flexColCenter,
+  gap: 6,
+  maxWidth: 800,
+}
+
 export const newsText: CSSProperties = {
   ...textBase,
   fontSize: 20,
