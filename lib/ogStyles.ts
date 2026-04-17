@@ -10,7 +10,7 @@ export const textBase: CSSProperties = {
   display: "flex",
 };
 
-export const labelText = {
+export const labelText: CSSProperties = {
   ...textBase,
   fontSize: 16,
   opacity: 0.6,
