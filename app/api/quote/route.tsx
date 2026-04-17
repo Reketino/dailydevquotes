@@ -83,9 +83,7 @@ export async function GET(req: Request) {
           gap: 25,
         }}
       >
-        <div style={{ display: "flex", fontSize: 16, opacity: 0.6 }}>
-          Dev Quotes
-        </div>
+        <div style={labelText}>Dev Quotes</div>
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
         <div style={{ display: "flex" }}>{text}</div>
 
