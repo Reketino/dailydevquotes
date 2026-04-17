@@ -90,13 +90,7 @@ export async function GET(req: Request) {
         <div style={textBase}>{text}</div>
 
         <div style={labelText}>Dev News</div>
-        <div
-          style={{
-            ...flexColCenter,
-            gap: 6,
-            maxWidth: 800,
-          }}
-        >
+        <div style={newsWrapper}>
           <div style={newsText}>{shortNews}</div>
           {domain && <div style={domainText}>🌐 {domain}</div>}
         </div>
