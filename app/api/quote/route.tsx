@@ -104,27 +104,8 @@ export async function GET(req: Request) {
             maxWidth: 800,
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              fontSize: 20,
-              lineHeight: 1.5,
-              wordWrap: "break-word",
-            }}
-          >
-            {shortNews}
-          </div>
-          {domain && (
-            <div
-              style={{
-                display: "flex",
-                fontSize: 14,
-                opacity: 0.5,
-              }}
-            >
-              🌐 {domain}
-            </div>
-          )}
+          <div style={newsText}>{shortNews}</div>
+          {domain && <div style={domainText}>🌐 {domain}</div>}
         </div>
       </section>
 
