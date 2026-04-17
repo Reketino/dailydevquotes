@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Adding ogStyles to route elements
+- Mood based styling
 
 ## 🐻 Author
 - Built by @Reketino
