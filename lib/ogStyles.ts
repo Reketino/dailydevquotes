@@ -17,6 +17,10 @@ export const labelText: CSSProperties = {
   letterSpacing: "0.08em",
 };
 
+export const quoteText: CSSProperties = {
+  ... textBase,
+}
+
 export const newsText: CSSProperties = {
   ...textBase,
   fontSize: 20,
