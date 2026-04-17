@@ -85,7 +85,7 @@ export async function GET(req: Request) {
       >
         <div style={labelText}>Dev Quotes</div>
         <div style={{ fontSize: emojiSize }}>{emoji}</div>
-        <div style={{ display: "flex" }}>{text}</div>
+        <div style={textBase}>{text}</div>
 
         <div
           style={{
