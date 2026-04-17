@@ -6,7 +6,7 @@ export const flexColCenter: CSSProperties = {
   alignItems: "center",
 };
 
-export const textBase = {
+export const textBase: CSSProperties = {
   display: "flex",
 };
 
