@@ -8,7 +8,7 @@ export type MoodStyle = {
 export const moodStyles: Record<Mood, MoodStyle> = {
   chaos: {
     glow: "0 0 40px rgba(255, 50, 50, 0.6)",
-    accent: "",
+    accent: "#ff4d4d",
   },
   pain: {
     glow: "",
