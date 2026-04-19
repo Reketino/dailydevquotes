@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Mood based styling
+- Styling to moods
 
 ## 🐻 Author
 - Built by @Reketino
