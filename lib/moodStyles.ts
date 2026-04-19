@@ -12,7 +12,7 @@ export const moodStyles: Record<Mood, MoodStyle> = {
   },
   pain: {
     glow: "0 0 30px rgba(120, 120, 255, 0.4)",
-    accent: "",
+    accent: "#7a7aff",
   },
   fun: {
     glow: "",
