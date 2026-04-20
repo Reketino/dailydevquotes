@@ -20,6 +20,6 @@ export const moodStyles: Record<Mood, MoodStyle> = {
   },
   wisdom: {
     glow: "0 0 30px rgba(100, 200, 255, 0.5)",
-    accent: "",
+    accent: "#66ccff",
   },
 };
