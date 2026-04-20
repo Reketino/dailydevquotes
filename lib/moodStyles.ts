@@ -15,11 +15,11 @@ export const moodStyles: Record<Mood, MoodStyle> = {
     accent: "#7a7aff",
   },
   fun: {
-    glow: "",
-    accent: "",
+    glow: "0 0 35px rgba(255, 200, 50, 0.6)",
+    accent: "#ffcc00",
   },
   wisdom: {
-    glow: "",
-    accent: "",
+    glow: "0 0 30px rgba(100, 200, 255, 0.5)",
+    accent: "#66ccff",
   },
 };
