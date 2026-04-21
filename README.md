@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Styling to moods
+- Implementing moodStyles onto Quote
 
 ## 🐻 Author
 - Built by @Reketino
