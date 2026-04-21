@@ -6,6 +6,7 @@ import { safeText } from "@/lib/safeText";
 import { resolveTheme } from "@/lib/theme";
 import { getDomain } from "@/lib/getDomain";
 import type { Mood } from "@/lib/getQuote";
+import { moodStyles } from "@/lib/moodStyles";
 import {
   flexColCenter,
   textBase,
