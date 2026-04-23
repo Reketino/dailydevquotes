@@ -50,7 +50,7 @@ export async function GET(req: Request) {
 
   const grain = grainByMood[mood];
 
-  const moodStyle = moodStyles[mood];
+  const { glow, accent} = moodStyles[mood];
 
   return new ImageResponse(
     <main
