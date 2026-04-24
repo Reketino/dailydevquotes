@@ -92,6 +92,7 @@ export async function GET(req: Request) {
         <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
         <div style={{
           ...quoteText,
+          textShadow: glow,
         }}
         >
           {text}
