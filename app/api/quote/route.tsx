@@ -90,7 +90,14 @@ export async function GET(req: Request) {
       >
         <div style={labelText}>Dev Quotes</div>
         <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
-        <div style={textBase}>{text}</div>
+        <div
+          style={{
+            ...quoteText,
+            textShadow: glow,
+          }}
+        >
+          {text}
+        </div>
 
         <div style={labelText}>Dev News</div>
         <div style={newsWrapper}>
