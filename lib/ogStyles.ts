@@ -39,3 +39,7 @@ export const domainText: CSSProperties = {
   fontSize: 14,
   opacity: 0.5,
 };
+
+export const sectionTitle: CSSProperties = {
+  
+}
