@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- Implementing moodStyles onto Quote
+- sectionTitle in ogStyles
 
 ## 🐻 Author
 - Built by @Reketino
