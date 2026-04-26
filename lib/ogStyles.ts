@@ -41,5 +41,5 @@ export const domainText: CSSProperties = {
 };
 
 export const sectionTitle: CSSProperties = {
-  
-}
+  display: "flex",
+};
