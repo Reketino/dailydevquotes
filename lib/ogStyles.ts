@@ -44,4 +44,5 @@ export const sectionTitle: CSSProperties = {
   display: "flex",
   fontSize: 16,
   opacity: 0.7,
+  letterSpacing: "0.12em",
 };
