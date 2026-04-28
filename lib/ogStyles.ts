@@ -45,4 +45,5 @@ export const sectionTitle: CSSProperties = {
   fontSize: 16,
   opacity: 0.7,
   letterSpacing: "0.12em",
+  textTransform: "uppercase",
 };
