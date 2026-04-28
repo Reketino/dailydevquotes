@@ -43,4 +43,5 @@ export const domainText: CSSProperties = {
 export const sectionTitle: CSSProperties = {
   display: "flex",
   fontSize: 16,
+  opacity: 0.7,
 };
