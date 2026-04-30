@@ -89,8 +89,14 @@ export async function GET(req: Request) {
           gap: 25,
         }}
       >
-        <div style={labelText}>Dev Quotes</div>
         <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
+         <div style={{
+          ...sectionTitle,
+          color: accent
+        }}
+        >
+          Dev Quotes
+          </div>
         <div
           style={{
             ...quoteText,
