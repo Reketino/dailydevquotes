@@ -90,13 +90,14 @@ export async function GET(req: Request) {
         }}
       >
         <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
-         <div style={{
-          ...sectionTitle,
-          color: accent
-        }}
+        <div
+          style={{
+            ...sectionTitle,
+            color: accent,
+          }}
         >
           Dev Quotes
-          </div>
+        </div>
         <div
           style={{
             ...quoteText,
