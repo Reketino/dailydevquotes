@@ -107,13 +107,14 @@ export async function GET(req: Request) {
           {text}
         </div>
 
-        <div style={{
-          ...sectionTitle,
-          color: accent,
-        }}
+        <div
+          style={{
+            ...sectionTitle,
+            color: accent,
+          }}
         >
           Dev News
-          </div>
+        </div>
         <div style={newsWrapper}>
           <div style={newsText}>{shortNews}</div>
           {domain && <div style={domainText}>🌐 {domain}</div>}
