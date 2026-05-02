@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- sectionTitle in ogStyles
+- change styling in main layout
 
 ## 🐻 Author
 - Built by @Reketino
