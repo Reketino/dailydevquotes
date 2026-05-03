@@ -40,7 +40,7 @@ export async function GET(req: Request) {
   const emoji = emojis[emojiIndex];
 
   const activeTheme = resolveTheme(theme);
-  const emojiSize = theme === "light" ? 48 : theme?.includes("tokyo") ? 60 : 56;
+  const emojiSize = theme === "light" ? 44 : theme?.includes("tokyo") ? 60 : 56;
 
   const grainByMood: Record<Mood, { opacity: number }> = {
     chaos: { opacity: 0.006 },
@@ -85,8 +85,9 @@ export async function GET(req: Request) {
         style={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          gap: 25,
+          justifyContent: "space-between",
+          height: "100%",
+          maxWidth: 900,
         }}
       >
         <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
