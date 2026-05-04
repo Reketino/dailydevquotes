@@ -90,6 +90,7 @@ export async function GET(req: Request) {
           maxWidth: 900,
         }}
       >
+        <div style={{...flexColCenter, gap: 10}}>
         <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
         <div
           style={{
@@ -107,7 +108,9 @@ export async function GET(req: Request) {
         >
           {text}
         </div>
+        </div>
 
+        <div style={{...flexColCenter, gap:4 }}>
         <div
           style={{
             ...sectionTitle,
@@ -117,8 +120,13 @@ export async function GET(req: Request) {
           Dev News
         </div>
         <div style={newsWrapper}>
-          <div style={newsText}>{shortNews}</div>
-          {domain && <div style={domainText}>🌐 {domain}</div>}
+          <div style={{ ...newsText, maxWidth:800}}>{shortNews}</div>
+          {domain && (
+            <div style={domainText}>
+              🌐 {domain}
+            </div>
+          )}
+        </div>
         </div>
       </section>
 
