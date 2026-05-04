@@ -85,14 +85,15 @@ export async function GET(req: Request) {
         style={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
+          justifyContent: "center",
           height: "100%",
           maxWidth: 900,
           alignItems: "flex-start",
           textAlign: "left",
+          gap: 18
         }}
       >
-        <div style={{...flexColStart, gap: 10}}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10}}>
         <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
         <div
           style={{
@@ -104,10 +105,9 @@ export async function GET(req: Request) {
         </div>
         <div
           style={{
-            ...quoteText,
             textShadow: glow,
-            fontSize: 26,
-            lineHeight: 1.3,
+            fontSize: 28,
+            lineHeight: 1.25,
             maxWidth: 720,
           }}
         >
@@ -115,7 +115,7 @@ export async function GET(req: Request) {
         </div>
         </div>
 
-        <div style={{...flexColStart, gap:4 }}>
+        <div style={{display: "flex", flexDirection: "column", gap: 6 }}>
         <div
           style={{
             ...sectionTitle,
@@ -125,17 +125,20 @@ export async function GET(req: Request) {
           Dev News
         </div>
         <div style={newsWrapper}>
-          <div style={{ 
-            ...newsText, 
-            maxWidth:800,
+          <div style={{  
+            maxWidth:720,
             fontSize: 18,
-            opacity: 0.9,
+            opacity: 0.85,
             }}
             >
               {shortNews}
               </div>
           {domain && (
-            <div style={domainText}>
+            <div style={{
+              fontSize: 13,
+              opacity: 0.5,
+              }}
+              >
               🌐 {domain}
             </div>
           )}
