@@ -90,59 +90,61 @@ export async function GET(req: Request) {
           maxWidth: 900,
           alignItems: "flex-start",
           textAlign: "left",
-          gap: 18
+          gap: 18,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 10}}>
-        <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
-        <div
-          style={{
-            ...sectionTitle,
-            color: accent,
-          }}
-        >
-          Dev Quotes
-        </div>
-        <div
-          style={{
-            textShadow: glow,
-            fontSize: 28,
-            lineHeight: 1.25,
-            maxWidth: 720,
-          }}
-        >
-          {text}
-        </div>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
+          <div
+            style={{
+              ...sectionTitle,
+              color: accent,
+            }}
+          >
+            Dev Quotes
+          </div>
+          <div
+            style={{
+              textShadow: glow,
+              fontSize: 28,
+              lineHeight: 1.25,
+              maxWidth: 720,
+            }}
+          >
+            {text}
+          </div>
         </div>
 
-        <div style={{display: "flex", flexDirection: "column", gap: 6 }}>
-        <div
-          style={{
-            ...sectionTitle,
-            color: accent,
-          }}
-        >
-          Dev News
-        </div>
-        <div style={newsWrapper}>
-          <div style={{  
-            maxWidth:720,
-            fontSize: 18,
-            opacity: 0.85,
+        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+          <div
+            style={{
+              ...sectionTitle,
+              color: accent,
             }}
+          >
+            Dev News
+          </div>
+          <div style={newsWrapper}>
+            <div
+              style={{
+                maxWidth: 720,
+                fontSize: 18,
+                opacity: 0.85,
+              }}
             >
               {shortNews}
-              </div>
-          {domain && (
-            <div style={{
-              fontSize: 13,
-              opacity: 0.5,
-              }}
-              >
-              🌐 {domain}
             </div>
-          )}
-        </div>
+            {domain && (
+              <div
+                style={{
+                  fontSize: 13,
+                  opacity: 0.5,
+                }}
+              >
+                🌐 {domain}
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
