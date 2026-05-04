@@ -6,6 +6,12 @@ export const flexColCenter: CSSProperties = {
   alignItems: "center",
 };
 
+export const flexColStart: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
+};
+
 export const textBase: CSSProperties = {
   display: "flex",
 };

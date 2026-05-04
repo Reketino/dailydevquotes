@@ -9,8 +9,8 @@ import type { Mood } from "@/lib/getQuote";
 import { moodStyles } from "@/lib/moodStyles";
 import {
   flexColCenter,
+  flexColStart,
   textBase,
-  labelText,
   newsText,
   domainText,
   newsWrapper,
@@ -88,9 +88,11 @@ export async function GET(req: Request) {
           justifyContent: "space-between",
           height: "100%",
           maxWidth: 900,
+          alignItems: "flex-start",
+          textAlign: "left",
         }}
       >
-        <div style={{...flexColCenter, gap: 10}}>
+        <div style={{...flexColStart, gap: 10}}>
         <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
         <div
           style={{
@@ -104,13 +106,16 @@ export async function GET(req: Request) {
           style={{
             ...quoteText,
             textShadow: glow,
+            fontSize: 26,
+            lineHeight: 1.3,
+            maxWidth: 720,
           }}
         >
           {text}
         </div>
         </div>
 
-        <div style={{...flexColCenter, gap:4 }}>
+        <div style={{...flexColStart, gap:4 }}>
         <div
           style={{
             ...sectionTitle,
@@ -120,7 +125,15 @@ export async function GET(req: Request) {
           Dev News
         </div>
         <div style={newsWrapper}>
-          <div style={{ ...newsText, maxWidth:800}}>{shortNews}</div>
+          <div style={{ 
+            ...newsText, 
+            maxWidth:800,
+            fontSize: 18,
+            opacity: 0.9,
+            }}
+            >
+              {shortNews}
+              </div>
           {domain && (
             <div style={domainText}>
               🌐 {domain}
