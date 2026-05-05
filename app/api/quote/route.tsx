@@ -127,7 +127,7 @@ export async function GET(req: Request) {
           >
             Dev News
           </div>
-          <div style={newsWrapper}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6}}>
             <div
               style={{
                 maxWidth: 720,
