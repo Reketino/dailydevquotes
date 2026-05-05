@@ -88,7 +88,7 @@ export async function GET(req: Request) {
           justifyContent: "space-between",
           height: "100%",
           maxWidth: 900,
-          alignItems: "flex-start",
+          alignItems: "center",
           textAlign: "left",
         }}
       >
