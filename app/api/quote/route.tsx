@@ -109,7 +109,7 @@ export async function GET(req: Request) {
             fontSize: 26,
             lineHeight: 1.3,
             maxWidth: 720,
-            marginBottom: 6,
+            marginBottom: 4,
           }}
         >
           {text}
