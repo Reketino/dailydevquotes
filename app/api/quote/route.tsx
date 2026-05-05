@@ -31,6 +31,7 @@ export async function GET(req: Request) {
   const news = await getDevNews();
 
   const text = quote?.text ?? "Fallback quote";
+  const quoteLength = text.length;
   const mood = quote?.mood ?? "chaos";
   const shortNews = safeText(news.title, 90);
   const domain = getDomain(news.link)?.replace(".com", "");
