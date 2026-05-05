@@ -93,18 +93,17 @@ export async function GET(req: Request) {
           gap: 18,
         }}
       >
-
-        <div style={{ display: "flex", alignItems: "column", gap: 10 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 10}}>
-          <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
-          <div
-            style={{
-              ...sectionTitle,
-              color: accent,
-            }}
-          >
-            Dev Quotes
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+            <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
+            <div
+              style={{
+                ...sectionTitle,
+                color: accent,
+              }}
+            >
+              Dev Quotes
+            </div>
           </div>
           <div
             style={{
@@ -127,7 +126,7 @@ export async function GET(req: Request) {
           >
             Dev News
           </div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 6}}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             <div
               style={{
                 maxWidth: 720,
