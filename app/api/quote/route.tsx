@@ -31,6 +31,7 @@ export async function GET(req: Request) {
   const news = await getDevNews();
 
   const text = quote?.text ?? "Fallback quote";
+  const quoteLength = text.length;
   const mood = quote?.mood ?? "chaos";
   const shortNews = safeText(news.title, 90);
   const domain = getDomain(news.link)?.replace(".com", "");
@@ -92,55 +93,52 @@ export async function GET(req: Request) {
           maxWidth: 760,
         }}
       >
-        <div style={{...flexColCenter, gap: 10}}>
-        <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
-        <div
-          style={{
-            ...sectionTitle,
-            color: accent,
-          }}
-        >
-          Dev Quotes
-        </div>
-        <div
-          style={{
-            ...quoteText,
-            textShadow: glow,
-            fontSize: 26,
-            lineHeight: 1.3,
-            maxWidth: 720,
-            marginBottom: 4,
-          }}
-        >
-          {text}
-        </div>
+        <div style={{ ...flexColCenter, gap: 10 }}>
+          <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
+          <div
+            style={{
+              ...sectionTitle,
+              color: accent,
+            }}
+          >
+            Dev Quotes
+          </div>
+          <div
+            style={{
+              ...quoteText,
+              textShadow: glow,
+              fontSize: 26,
+              lineHeight: 1.3,
+              maxWidth: 720,
+              marginBottom: 4,
+            }}
+          >
+            {text}
+          </div>
         </div>
 
-        <div style={{...flexColCenter, gap:8, marginTop: 10 }}>
-        <div
-          style={{
-            ...sectionTitle,
-            color: accent,
-          }}
-        >
-          Dev News
-        </div>
-        <div style={newsWrapper}>
-          <div style={{ 
-            ...newsText, 
-            maxWidth:800,
-            fontSize: 18,
-            opacity: 0.9,
+        <div style={{ ...flexColCenter, gap: 8, marginTop: 10 }}>
+          <div
+            style={{
+              ...sectionTitle,
+              color: accent,
             }}
+          >
+            Dev News
+          </div>
+          <div style={newsWrapper}>
+            <div
+              style={{
+                ...newsText,
+                maxWidth: 800,
+                fontSize: 18,
+                opacity: 0.9,
+              }}
             >
               {shortNews}
-              </div>
-          {domain && (
-            <div style={domainText}>
-              🌐 {domain}
             </div>
-          )}
-        </div>
+            {domain && <div style={domainText}>🌐 {domain}</div>}
+          </div>
         </div>
       </section>
 
