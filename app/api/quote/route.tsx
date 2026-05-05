@@ -85,11 +85,11 @@ export async function GET(req: Request) {
         style={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          height: "100%",
-          maxWidth: 900,
+          justifyContent: "flex-start",
           alignItems: "center",
-          textAlign: "center",
+          gap: 22,
+          paddingTop: 20,
+          maxWidth: 760,
         }}
       >
         <div style={{...flexColCenter, gap: 10}}>
