@@ -89,10 +89,10 @@ export async function GET(req: Request) {
           height: "100%",
           maxWidth: 900,
           alignItems: "center",
-          textAlign: "left",
+          textAlign: "center",
         }}
       >
-        <div style={{...flexColStart, gap: 10}}>
+        <div style={{...flexColCenter, gap: 10}}>
         <div style={{ ...textBase, fontSize: emojiSize }}>{emoji}</div>
         <div
           style={{
@@ -115,7 +115,7 @@ export async function GET(req: Request) {
         </div>
         </div>
 
-        <div style={{...flexColStart, gap:4 }}>
+        <div style={{...flexColCenter, gap:4 }}>
         <div
           style={{
             ...sectionTitle,
