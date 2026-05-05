@@ -109,13 +109,14 @@ export async function GET(req: Request) {
             fontSize: 26,
             lineHeight: 1.3,
             maxWidth: 720,
+            marginBottom: 6,
           }}
         >
           {text}
         </div>
         </div>
 
-        <div style={{...flexColCenter, gap:4 }}>
+        <div style={{...flexColCenter, gap:8, marginTop: 10 }}>
         <div
           style={{
             ...sectionTitle,
