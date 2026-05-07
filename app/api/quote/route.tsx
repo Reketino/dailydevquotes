@@ -110,7 +110,7 @@ export async function GET(req: Request) {
             style={{
               ...quoteText,
               textShadow: glow,
-              fontSize: 26,
+              fontSize: quoteSize,
               lineHeight: 1.3,
               maxWidth: 720,
               marginBottom: 4,
