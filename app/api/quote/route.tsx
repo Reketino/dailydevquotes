@@ -90,7 +90,7 @@ export async function GET(req: Request) {
           flexDirection: "column",
           justifyContent: "flex-start",
           alignItems: "center",
-          gap: 22,
+          gap: dynamicGap,
           paddingTop: 20,
           maxWidth: 760,
         }}
