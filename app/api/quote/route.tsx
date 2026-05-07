@@ -33,6 +33,7 @@ export async function GET(req: Request) {
   const text = quote?.text ?? "Fallback quote";
   const quoteLength = text.length;
   const dynamicGap = quoteLength < 80 ? 26 : quoteLength < 140 ? 22 : 18;
+  const quoteSize = quoteLength < 80 ? 28 : quoteLength < 140 ? 26 : 24;
 
   const mood = quote?.mood ?? "chaos";
   const shortNews = safeText(news.title, 90);
@@ -90,7 +91,7 @@ export async function GET(req: Request) {
           flexDirection: "column",
           justifyContent: "flex-start",
           alignItems: "center",
-          gap: 22,
+          gap: dynamicGap,
           paddingTop: 20,
           maxWidth: 760,
         }}
@@ -109,7 +110,7 @@ export async function GET(req: Request) {
             style={{
               ...quoteText,
               textShadow: glow,
-              fontSize: 26,
+              fontSize: quoteSize,
               lineHeight: 1.3,
               maxWidth: 720,
               marginBottom: 4,
