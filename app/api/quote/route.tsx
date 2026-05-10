@@ -9,7 +9,6 @@ import type { Mood } from "@/lib/getQuote";
 import { moodStyles } from "@/lib/moodStyles";
 import {
   flexColCenter,
-  flexColStart,
   textBase,
   newsText,
   domainText,
