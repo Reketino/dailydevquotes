@@ -94,7 +94,6 @@ export async function GET(req: Request) {
           gap: dynamicGap,
           paddingTop: 20,
           maxWidth: 760,
-          maxHeight: 220,
         }}
       >
         <div style={{ ...flexColCenter, gap: 10 }}>
@@ -121,7 +120,7 @@ export async function GET(req: Request) {
           </div>
         </div>
 
-        <div style={{ ...flexColCenter, gap: 8, marginTop: 10 }}>
+        <div style={{ ...flexColCenter, gap: 8, marginTop: 4 }}>
           <div
             style={{
               ...sectionTitle,
