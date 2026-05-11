@@ -111,7 +111,7 @@ PRs are welcome as long as:
 
 ## Working on:
 
-- change styling in main layout
+- Glass Card
 
 ## 🐻 Author
 - Built by @Reketino
