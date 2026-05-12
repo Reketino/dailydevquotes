@@ -93,6 +93,8 @@ export async function GET(req: Request) {
           gap: dynamicGap,
           paddingTop: 20,
           maxWidth: 760,
+
+          background: "rgba(255,255,255,0.03)",
         }}
       >
         <div style={{ ...flexColCenter, gap: 10 }}>
