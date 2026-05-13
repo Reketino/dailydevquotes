@@ -95,6 +95,7 @@ export async function GET(req: Request) {
           maxWidth: 760,
 
           background: "rgba(255,255,255,0.03)",
+          border: "1px solid rgba(255,255,255,0.06)",
         }}
       >
         <div style={{ ...flexColCenter, gap: 10 }}>
