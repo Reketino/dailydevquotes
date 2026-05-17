@@ -115,7 +115,7 @@ export async function GET(req: Request) {
               textShadow: glow,
               fontSize: quoteSize,
               lineHeight: 1.3,
-              maxWidth: 720,
+              maxWidth: 620,
               marginBottom: 4,
             }}
           >
