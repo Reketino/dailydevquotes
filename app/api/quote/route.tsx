@@ -91,6 +91,8 @@ export async function GET(req: Request) {
           justifyContent: "flex-start",
           alignItems: "center",
           gap: dynamicGap,
+
+          width: "100%",
           maxWidth: 760,
 
           background: "rgba(255,255,255,0.03)",
