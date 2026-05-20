@@ -94,6 +94,7 @@ export async function GET(req: Request) {
 
           width: "100%",
           maxWidth: 760,
+          boxSizing: "border-box",
 
           background: "rgba(255,255,255,0.03)",
           border: "1px solid rgba(255,255,255,0.06)",
