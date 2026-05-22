@@ -140,6 +140,7 @@ export async function GET(req: Request) {
             <div
               style={{
                 ...newsText,
+                width: "100%",
                 maxWidth: 560,
                 fontSize: 18,
                 opacity: 0.9,
