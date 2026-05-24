@@ -158,7 +158,7 @@ export async function GET(req: Request) {
         style={{
           position: "absolute",
           bottom: 10,
-          right: 70,
+          right: 75,
           fontSize: 18,
           opacity: theme === "light" ? 0.4 : 0.6,
           letterSpacing: "0.05em",
