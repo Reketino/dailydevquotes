@@ -92,7 +92,7 @@ export async function GET(req: Request) {
           alignItems: "center",
           gap: dynamicGap,
 
-          width: "100%",
+          width: 700,
           maxWidth: 760,
           boxSizing: "border-box",
 
