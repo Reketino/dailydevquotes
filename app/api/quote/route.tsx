@@ -106,7 +106,13 @@ export async function GET(req: Request) {
         }}
       >
         <div style={{ ...flexColCenter, gap: 10 }}>
-          <div style={{ ...textBase, fontSize: finalEmojiSize }}>{emoji}</div>
+          <div style={{ 
+            ...textBase, 
+            fontSize: finalEmojiSize, 
+            marginTop: 8,
+            }}
+            >{emoji}
+            </div>
           <div
             style={{
               ...sectionTitle,
