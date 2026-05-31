@@ -102,7 +102,6 @@ export async function GET(req: Request) {
           borderRadius: 28,
           padding: "32px 48px",
           minHeight: 180,
-          overflow: "hidden",
         }}
       >
         <div style={{ ...flexColCenter, gap: 10 }}>
