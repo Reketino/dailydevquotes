@@ -32,7 +32,11 @@ export async function GET(req: Request) {
   const text = quote?.text ?? "Fallback quote";
   const quoteLength = text.length;
   const dynamicGap = quoteLength < 80 ? 26 : quoteLength < 140 ? 22 : 18;
-  const quoteSize = quoteLength < 80 ? 28 : quoteLength < 140 ? 26 : 24;
+  const quoteSize = 
+  quoteLength < 80 ? 28 : 
+  quoteLength < 120 ? 26 : 
+  quoteLength < 180 ? 24 :
+  22;
 
   const mood = quote?.mood ?? "chaos";
   const shortNews = safeText(news.title, 90);
