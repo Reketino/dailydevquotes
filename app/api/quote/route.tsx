@@ -108,7 +108,7 @@ export async function GET(req: Request) {
           background: "rgba(255,255,255,0.03)",
           border: "1px solid rgba(255,255,255,0.06)",
           borderRadius: 28,
-          padding: "32px 48px",
+          padding: "20px 48px",
           minHeight: 180,
         }}
       >
