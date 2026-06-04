@@ -109,7 +109,7 @@ export async function GET(req: Request) {
           border: "1px solid rgba(255,255,255,0.06)",
           borderRadius: 28,
           padding: "20px 48px",
-          minHeight: 180,
+          minHeight: 160,
         }}
       >
         <div style={{ ...flexColCenter, gap: 10 }}>
