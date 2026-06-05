@@ -135,7 +135,7 @@ export async function GET(req: Request) {
               fontSize: quoteSize,
               lineHeight: 1.3,
               width: "100%",
-              maxWidth: 620,
+              maxWidth: 680,
               marginBottom: 4,
             }}
           >
