@@ -52,7 +52,12 @@ export async function GET(req: Request) {
 
   const activeTheme = resolveTheme(theme);
   const emojiSize = theme === "light" ? 44 : theme?.includes("tokyo") ? 60 : 56;
-  const finalEmojiSize = quoteLength > 100 ? emojiSize - 10 : emojiSize;
+  const finalEmojiSize = 
+  quoteLength > 140 
+  ? emojiSize - 14 
+  : quoteLength > 100 
+  ? emojiSize - 10
+  : emojiSize;
 
   const grainByMood: Record<Mood, { opacity: number }> = {
     chaos: { opacity: 0.006 },
