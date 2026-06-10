@@ -121,7 +121,7 @@ export async function GET(req: Request) {
           <div style={{ 
             ...textBase, 
             fontSize: finalEmojiSize, 
-            marginTop: 10,
+            marginTop: 4,
             }}
             >{emoji}
             </div>
