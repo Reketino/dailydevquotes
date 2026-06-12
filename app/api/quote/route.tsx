@@ -31,16 +31,22 @@ export async function GET(req: Request) {
 
   const text = quote?.text ?? "Fallback quote";
   const quoteLength = text.length;
-  const dynamicGap = 
-  quoteLength < 80 ? 26 : 
-  quoteLength < 120 ? 22 :
-  quoteLength < 180 ? 24 : 
-  14;
-  const quoteSize = 
-  quoteLength < 80 ? 28 : 
-  quoteLength < 120 ? 26 : 
-  quoteLength < 180 ? 24 :
-  22;
+  const dynamicGap =
+    quoteLength < 80
+      ? 26
+      : quoteLength < 120
+        ? 22
+        : quoteLength < 180
+          ? 24
+          : 14;
+  const quoteSize =
+    quoteLength < 80
+      ? 28
+      : quoteLength < 120
+        ? 26
+        : quoteLength < 180
+          ? 24
+          : 22;
 
   const mood = quote?.mood ?? "chaos";
   const shortNews = safeText(news.title, 90);
@@ -52,12 +58,12 @@ export async function GET(req: Request) {
 
   const activeTheme = resolveTheme(theme);
   const emojiSize = theme === "light" ? 44 : theme?.includes("tokyo") ? 60 : 56;
-  const finalEmojiSize = 
-  quoteLength > 140 
-  ? emojiSize - 14 
-  : quoteLength > 100 
-  ? emojiSize - 10
-  : emojiSize;
+  const finalEmojiSize =
+    quoteLength > 140
+      ? emojiSize - 14
+      : quoteLength > 100
+        ? emojiSize - 10
+        : emojiSize;
 
   const grainByMood: Record<Mood, { opacity: number }> = {
     chaos: { opacity: 0.006 },
@@ -119,13 +125,15 @@ export async function GET(req: Request) {
         }}
       >
         <div style={{ ...flexColCenter, gap: 10 }}>
-          <div style={{ 
-            ...textBase, 
-            fontSize: finalEmojiSize, 
-            marginTop: 4,
+          <div
+            style={{
+              ...textBase,
+              fontSize: finalEmojiSize,
+              marginTop: 4,
             }}
-            >{emoji}
-            </div>
+          >
+            {emoji}
+          </div>
           <div
             style={{
               ...sectionTitle,
