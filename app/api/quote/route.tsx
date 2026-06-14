@@ -186,9 +186,9 @@ export async function GET(req: Request) {
       <section
         style={{
           position: "absolute",
-          bottom: 10,
-          right: 75,
-          fontSize: 18,
+          bottom: 20,
+          right: 24,
+          fontSize: 16,
           opacity: theme === "light" ? 0.4 : 0.6,
           letterSpacing: "0.05em",
         }}
