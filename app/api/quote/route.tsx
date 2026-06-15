@@ -60,7 +60,7 @@ export async function GET(req: Request) {
   const emojiSize = theme === "light" ? 44 : theme?.includes("tokyo") ? 60 : 56;
   const finalEmojiSize =
     quoteLength > 140
-      ? emojiSize - 14
+      ? emojiSize - 16
       : quoteLength > 100
         ? emojiSize - 10
         : emojiSize;
