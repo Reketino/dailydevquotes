@@ -45,8 +45,8 @@ export async function GET(req: Request) {
       : quoteLength < 120
         ? 26
         : quoteLength < 180
-          ? 18
-          : 14;
+          ? 24
+          : 22;
 
   const mood = quote?.mood ?? "chaos";
   const shortNews = safeText(news.title, 90);
