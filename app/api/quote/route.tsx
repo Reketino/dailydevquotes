@@ -112,8 +112,8 @@ export async function GET(req: Request) {
           alignItems: "center",
           gap: dynamicGap,
 
-          width: 780,
-          maxWidth: 820,
+          width: 740,
+          maxWidth: 780,
           boxSizing: "border-box",
 
           background: "rgba(255,255,255,0.03)",
