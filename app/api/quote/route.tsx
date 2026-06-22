@@ -116,7 +116,8 @@ export async function GET(req: Request) {
           maxWidth: 780,
           boxSizing: "border-box",
 
-          background: "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
+          background:
+            "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
           border: "1px solid rgba(255,255,255,0.06)",
           borderRadius: 28,
           boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
