@@ -28,7 +28,7 @@ export async function GET(req: Request) {
   const theme = searchParams.get("theme") ?? "dark";
 
   const quote = await getQuote(user);
-  
+
   let news: Awaited<ReturnType<typeof getDevNews>> = {
     title: "Latest developer news unavaliable",
     link: "",
@@ -37,7 +37,7 @@ export async function GET(req: Request) {
   try {
     news = await getDevNews();
   } catch (error) {
-    console.error("Failed to fetch news", error)
+    console.error("Failed to fetch news", error);
   }
 
   const text = quote?.text ?? "Fallback quote";
