@@ -24,7 +24,7 @@ function isDevNews(title: string) {
 export async function getDevNews(): Promise<NewsItem> {
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 2000);
+    const timeout = setTimeout(() => controller.abort(), 7000);
     const res = await fetch("https://ok.surf/api/v1/cors/news-section", {
       method: "POST",
       headers: {
