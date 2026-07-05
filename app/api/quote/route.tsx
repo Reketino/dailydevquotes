@@ -44,12 +44,12 @@ export async function GET(req: Request) {
   const quoteLength = text.length;
   const dynamicGap =
     quoteLength < 80
-      ? 26
+      ? 18
       : quoteLength < 120
-        ? 22
+        ? 16
         : quoteLength < 180
-          ? 24
-          : 14;
+          ? 14
+          : 10;
   const quoteSize =
     quoteLength < 80
       ? 28
@@ -132,11 +132,11 @@ export async function GET(req: Request) {
           border: "1px solid rgba(255,255,255,0.06)",
           borderRadius: 28,
           boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
-          padding: "20px 48px",
-          minHeight: 160,
+          padding: "18px 48px",
+          minHeight: 150,
         }}
       >
-        <div style={{ ...flexColCenter, gap: 10 }}>
+        <div style={{ ...flexColCenter, gap: 6 }}>
           <div
             style={{
               ...textBase,
@@ -169,7 +169,7 @@ export async function GET(req: Request) {
           </div>
         </div>
 
-        <div style={{ ...flexColCenter, gap: 8, marginTop: 4 }}>
+        <div style={{ ...flexColCenter, gap: 4, marginTop: 0 }}>
           <div
             style={{
               ...sectionTitle,
