@@ -1,6 +1,6 @@
 import { ImageResponse } from "@vercel/og";
 import { hash } from "@/lib/hash";
-import { getCachedNews } from "@/lib/getCachedNews";
+import { getDevNews } from "@/lib/getDevNews";
 import { getQuote } from "@/lib/getQuote";
 import { safeText } from "@/lib/safeText";
 import { resolveTheme } from "@/lib/theme";
@@ -29,13 +29,13 @@ export async function GET(req: Request) {
 
   const quote = await getQuote(user);
 
-  let news: Awaited<ReturnType<typeof getCachedNews>> = {
+  let news: Awaited<ReturnType<typeof getDevNews>> = {
     title: "Latest developer news unavaliable",
     link: "",
   };
 
   try {
-    news = await getCachedNews();
+    news = await getDevNews();
   } catch (error) {
     console.error("Failed to fetch news", error);
   }
