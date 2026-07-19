@@ -40,7 +40,11 @@ export async function getDevNews(): Promise<NewsItem> {
     clearTimeout(timeout);
 
     if (!res.ok) {
-      console.error("NEWS API ERROR:", res.status)
+      console.error("NEWS API ERROR:", res.status);
+
+      return {
+        title: "No dev news today aye",
+      }
     }
 
     const json: OkSurfResponse = await res.json();
