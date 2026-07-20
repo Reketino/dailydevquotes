@@ -44,7 +44,7 @@ export async function getDevNews(): Promise<NewsItem> {
 
       return {
         title: "No dev news today aye",
-      }
+      };
     }
 
     const json: OkSurfResponse = await res.json();
