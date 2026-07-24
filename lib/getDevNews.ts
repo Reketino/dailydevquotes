@@ -19,7 +19,8 @@ function isDevNews(title: string) {
     t.includes("code") ||
     t.includes("security") ||
     t.includes("github") ||
-    t.includes("open source")
+    t.includes("open source") ||
+    t.includes("javascript")
   );
 }
 
