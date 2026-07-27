@@ -22,7 +22,8 @@ function isDevNews(title: string) {
     t.includes("open source") ||
     t.includes("javascript") ||
     t.includes("typescript") ||
-    t.includes("python")
+    t.includes("python") ||
+    t.includes("react")
   );
 }
 
