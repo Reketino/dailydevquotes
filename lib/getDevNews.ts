@@ -23,7 +23,8 @@ function isDevNews(title: string) {
     t.includes("javascript") ||
     t.includes("typescript") ||
     t.includes("python") ||
-    t.includes("react")
+    t.includes("react") ||
+    t.includes("next.js")
   );
 }
 
