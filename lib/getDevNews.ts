@@ -12,7 +12,8 @@ function isDevNews(title: string) {
   const t = title.toLowerCase();
 
   return (
-    t.includes("ai") ||
+    /\bai\b/.test(t) ||
+    t.includes("artificial intelligence") ||
     t.includes("developer") ||
     t.includes("software") ||
     t.includes("programming") ||
