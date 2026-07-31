@@ -29,6 +29,16 @@ function isDevNews(title: string) {
   );
 }
 
+function isExcludedNews(title: string) {
+  const t = title.toLowerCase();
+
+  return (
+    t.includes("celebrity") ||
+    t.includes("sports") ||
+    t.includes("fotball")
+  );
+}
+
 export async function getDevNews(): Promise<NewsItem> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 7000);
