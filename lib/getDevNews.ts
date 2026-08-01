@@ -73,7 +73,11 @@ export async function getDevNews(): Promise<NewsItem> {
       return { title: "There ain't no dev news today aye " };
     }
 
-    const filtered = items.filter((item) => isDevNews(item?.title ?? ""));
+    const filtered = items.filter((item) => {
+      const title = item?.title ?? "";
+
+      return isDevNews(title) && !isExcludedNews(title);
+    });
 
     const list = filtered.length > 0 ? filtered : items;
 
