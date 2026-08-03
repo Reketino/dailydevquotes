@@ -30,7 +30,7 @@ export async function GET(req: Request) {
   const quote = await getQuote(user);
 
   let news: Awaited<ReturnType<typeof getDevNews>> = {
-    title: "Latest developer news unavaliable",
+    title: "Latest developer news unavailable",
     link: "",
   };
 
