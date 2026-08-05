@@ -30,7 +30,7 @@ export async function GET(req: Request) {
   const quote = await getQuote(user);
   const news = await getDevNews();
   
-  const text = quote?.text ?? "Fallback quote";
+  const text = quote.text;
   const quoteLength = text.length;
   const dynamicGap =
     quoteLength < 80
