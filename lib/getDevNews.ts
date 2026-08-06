@@ -39,6 +39,10 @@ function isExcludedNews(title: string) {
   );
 }
 
+function scoreNews(title: string) {
+  
+}
+
 export async function getDevNews(): Promise<NewsItem> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 7000);
