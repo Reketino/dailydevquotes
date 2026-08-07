@@ -40,6 +40,11 @@ function isExcludedNews(title: string) {
 }
 
 function scoreNews(title: string) {
+  const t = title.toLowerCase();
+
+  let score = 0;
+
+  
   
 }
 
