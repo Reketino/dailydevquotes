@@ -44,7 +44,21 @@ function scoreNews(title: string) {
 
   let score = 0;
 
-  
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("react")) score += 9;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
+  if (t.includes("next.js")) score += 10;
   
 }
 
