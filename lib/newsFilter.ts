@@ -18,3 +18,13 @@ export function isDevNews(title: string) {
     t.includes("next.js")
   );
 }
+
+export function isExcludedNews(title: string) {
+  const t = title.toLowerCase();
+
+  return (
+    t.includes("celebrity") ||
+    t.includes("sports") ||
+    t.includes("fotball")
+  );
+}
