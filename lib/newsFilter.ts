@@ -34,10 +34,10 @@ export function scoreNews(title: string) {
 
   if (t.includes("next.js")) score += 10;
   if (t.includes("react")) score += 9;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
+  if (t.includes("typescript")) score += 9;
+  if (t.includes("javascript")) score += 8;
+  if (t.includes("python")) score += 8;
+  if (/\bai\b/.test(t)) score += 8;
   if (t.includes("next.js")) score += 10;
   if (t.includes("next.js")) score += 10;
   if (t.includes("next.js")) score += 10;
