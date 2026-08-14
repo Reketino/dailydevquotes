@@ -38,7 +38,7 @@ export function scoreNews(title: string) {
   if (t.includes("javascript")) score += 8;
   if (t.includes("python")) score += 8;
   if (/\bai\b/.test(t)) score += 8;
-  if (t.includes("next.js")) score += 10;
+  if (t.includes("artificial intelligence")) score += 8;
   if (t.includes("next.js")) score += 10;
   if (t.includes("next.js")) score += 10;
   if (t.includes("next.js")) score += 10;
