@@ -41,7 +41,7 @@ export function scoreNews(title: string) {
   if (t.includes("artificial intelligence")) score += 8;
   if (t.includes("github")) score += 7;
   if (t.includes("open source")) score += 7;
-  if (t.includes("next.js")) score += 10;
+  if (t.includes("security")) score += 6;
   if (t.includes("next.js")) score += 10;
   if (t.includes("next.js")) score += 10;
   if (t.includes("next.js")) score += 10;
