@@ -43,7 +43,7 @@ export function scoreNews(title: string) {
   if (t.includes("open source")) score += 7;
   if (t.includes("security")) score += 6;
   if (t.includes("developer")) score += 6;
-  if (t.includes("next.js")) score += 10;
+  if (t.includes("software")) score += 5;
   if (t.includes("next.js")) score += 10;
   if (t.includes("next.js")) score += 10;
   if (t.includes("next.js")) score += 10;
