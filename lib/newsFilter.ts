@@ -45,7 +45,7 @@ export function scoreNews(title: string) {
   if (t.includes("developer")) score += 6;
   if (t.includes("software")) score += 5;
   if (t.includes("programming")) score += 5;
-  if (t.includes("next.js")) score += 10;
+  if (t.includes("code")) score += 5;
   if (t.includes("next.js")) score += 10;
 
   return score;
