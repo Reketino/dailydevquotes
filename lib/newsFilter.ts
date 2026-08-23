@@ -23,7 +23,7 @@ export function isExcludedNews(title: string) {
   const t = title.toLowerCase();
 
   return (
-    t.includes("celebrity") || t.includes("sports") || t.includes("fotball")
+    t.includes("celebrity") || t.includes("sports") || t.includes("football")
   );
 }
 
