@@ -102,6 +102,9 @@ export async function getDevNews(): Promise<NewsItem> {
     const list = filtered.length > 0 ? filtered : items;
 
     const day = Math.floor(Date.now() / 86400000);
+
+    const topNews = list.slice(0, Math.min(5, list.length));
+    
     const index = day % list.length;
 
     return list[index] ?? { title: "No dev news today" };
