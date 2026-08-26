@@ -1,3 +1,9 @@
+import {
+  isDevNews,
+  isExcludedNews,
+  scoreNews,
+} from "./newsFilter";
+
 type NewsItem = {
   title: string;
   link?: string;
@@ -7,57 +13,6 @@ type NewsItem = {
 type OkSurfResponse = {
   Technology?: NewsItem[];
 };
-
-function isDevNews(title: string) {
-  const t = title.toLowerCase();
-
-  return (
-    /\bai\b/.test(t) ||
-    t.includes("artificial intelligence") ||
-    t.includes("developer") ||
-    t.includes("software") ||
-    t.includes("programming") ||
-    t.includes("code") ||
-    t.includes("security") ||
-    t.includes("github") ||
-    t.includes("open source") ||
-    t.includes("javascript") ||
-    t.includes("typescript") ||
-    t.includes("python") ||
-    t.includes("react") ||
-    t.includes("next.js")
-  );
-}
-
-function isExcludedNews(title: string) {
-  const t = title.toLowerCase();
-
-  return (
-    t.includes("celebrity") || t.includes("sports") || t.includes("fotball")
-  );
-}
-
-function scoreNews(title: string) {
-  const t = title.toLowerCase();
-
-  let score = 0;
-
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("react")) score += 9;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("next.js")) score += 10;
-}
 
 export async function getDevNews(): Promise<NewsItem> {
   const controller = new AbortController();
@@ -99,15 +54,18 @@ export async function getDevNews(): Promise<NewsItem> {
       return isDevNews(title) && !isExcludedNews(title);
     });
 
-    const list = filtered.length > 0 ? filtered : items;
+    const list = (filtered.length > 0 ? filtered : items).sort(
+      (a, b) => scoreNews(b.title) - scoreNews(a.title),
+    );
 
     const day = Math.floor(Date.now() / 86400000);
 
     const topNews = list.slice(0, Math.min(5, list.length));
     
-    const index = day % list.length;
+    const index = day % topNews.length;
 
-    return list[index] ?? { title: "No dev news today" };
+    return topNews[index] ?? { title: "No dev news today"}
+
   } catch (err) {
     console.log("NEWS ERROR:", err);
     return { title: "No dev news today" };
