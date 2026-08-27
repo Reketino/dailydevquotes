@@ -64,11 +64,17 @@ export async function getDevNews(): Promise<NewsItem> {
     
     const index = day % topNews.length;
 
-    return topNews[index] ?? { title: "No dev news today"}
-
-  } catch (err) {
-    console.log("NEWS ERROR:", err);
-    return { title: "No dev news today" };
+    return ( 
+      topNews[index] ?? { 
+        title: "No dev news today",
+      } 
+    );
+  } catch (error) {
+    console.log("NEWS ERROR:", error);
+    
+    return { 
+      title: "No dev news today" 
+    };
   } finally {
     clearTimeout(timeout);
   }
