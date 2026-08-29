@@ -1,5 +1,5 @@
 const positiveKeywords = [
-  
+  { keyword: "next.js", score: 10 },
 ]
 
 export function isDevNews(title: string) {
