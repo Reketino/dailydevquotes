@@ -2,7 +2,7 @@ const positiveKeywords = [
   { keyword: "next.js", score: 10 },
   { keyword: "react", score: 9 },
   { keyword: "typescript", score: 9 },
-  
+  { keyword: "javascript", score: 8 },
   
 ]
 
