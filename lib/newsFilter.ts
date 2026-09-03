@@ -4,8 +4,11 @@ const positiveKeywords = [
   { keyword: "typescript", score: 9 },
   { keyword: "javascript", score: 8 },
   { keyword: "python", score: 8 },
+
+  { keyword: "ai", score: 8 },
+
   
-]
+];
 
 export function isDevNews(title: string) {
   const t = title.toLowerCase();
