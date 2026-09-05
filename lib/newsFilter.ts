@@ -7,6 +7,8 @@ const positiveKeywords = [
 
   { keyword: "ai", score: 8 },
   { keyword: "artificial intelligence", score: 8 },
+
+  { keyword: "github", score: 7 },
   
 ];
 
