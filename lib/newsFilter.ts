@@ -11,6 +11,8 @@ const positiveKeywords = [
   { keyword: "github", score: 7 },
   { keyword: "open source", score: 7 },
   
+  { keyword: "security", score: 6 },
+  
 ];
 
 export function isDevNews(title: string) {
