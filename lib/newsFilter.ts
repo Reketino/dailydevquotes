@@ -12,8 +12,9 @@ const positiveKeywords = [
   { keyword: "open source", score: 7 },
   
   { keyword: "security", score: 6 },
-  { keyword: "developer", score: 6},
-  { keyword: "software", score: 5},
+  { keyword: "developer", score: 6 },
+  { keyword: "software", score: 5 },
+  { keyword: "programming", score: 5 },
   
 ];
 
