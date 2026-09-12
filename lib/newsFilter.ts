@@ -16,6 +16,8 @@ const positiveKeywords = [
   { keyword: "software", score: 5 },
   { keyword: "programming", score: 5 },
   { keyword: "code", score: 4 },
+
+  { keyword: "release", score: 6},
   
 ];
 
