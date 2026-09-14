@@ -19,6 +19,7 @@ const positiveKeywords = [
 
   { keyword: "release", score: 6 },
   { keyworrd: "launch", score: 6 },
+  {keyword: "update", score: 5 },
 ];
 
 export function isDevNews(title: string) {
