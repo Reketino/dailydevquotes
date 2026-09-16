@@ -21,6 +21,7 @@ const positiveKeywords = [
   { keyword: "launch", score: 6 },
   { keyword: "new version", score: 6 },
   { keyword: "update", score: 5 },
+  { keyword: "announces", score: 4 },
 
 ];
 
