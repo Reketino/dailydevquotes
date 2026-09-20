@@ -23,6 +23,8 @@ const positiveKeywords = [
   { keyword: "update", score: 5 },
   { keyword: "announces", score: 4 },
 
+  { keyword: "security vulnerability", score: 10 },
+
 ];
 
 export function isDevNews(title: string) {
