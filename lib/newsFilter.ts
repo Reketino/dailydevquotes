@@ -25,6 +25,7 @@ const positiveKeywords = [
 
   { keyword: "security vulnerability", score: 10 },
   { keyword: "vulnerability", score: 8 },
+  { keyword: "cve", score: 9 },
 
 ];
 
