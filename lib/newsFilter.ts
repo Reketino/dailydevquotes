@@ -26,7 +26,7 @@ const positiveKeywords = [
   { keyword: "security vulnerability", score: 10 },
   { keyword: "vulnerability", score: 8 },
   { keyword: "cve", score: 9 },
-
+  { keyword: "exploit", score: 8 },
 ];
 
 export function isDevNews(title: string) {
