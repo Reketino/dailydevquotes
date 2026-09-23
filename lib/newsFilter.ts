@@ -29,6 +29,11 @@ const positiveKeywords = [
   { keyword: "exploit", score: 8 },
 ];
 
+const negativeKeywords = [
+  { keyowrd: "you won't believe", score: 8 },
+  
+]
+
 export function isDevNews(title: string) {
   const t = title.toLowerCase();
 
