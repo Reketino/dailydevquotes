@@ -31,7 +31,7 @@ const positiveKeywords = [
 
 const negativeKeywords = [
   { keyowrd: "you won't believe", score: 8 },
-  
+  { keyowrd: "shocking", score: 5 },
 ]
 
 export function isDevNews(title: string) {
