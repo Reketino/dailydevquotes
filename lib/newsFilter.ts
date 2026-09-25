@@ -30,8 +30,9 @@ const positiveKeywords = [
 ];
 
 const negativeKeywords = [
-  { keyowrd: "you won't believe", score: 8 },
-  { keyowrd: "shocking", score: 5 },
+  { keyword: "you won't believe", score: 8 },
+  { keyword: "shocking", score: 5 },
+  { keyword: "this changes everything", score: 6 },
 ]
 
 export function isDevNews(title: string) {
