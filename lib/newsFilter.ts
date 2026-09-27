@@ -34,6 +34,7 @@ const negativeKeywords = [
   { keyword: "shocking", score: 5 },
   { keyword: "this changes everything", score: 6 },
   { keyword: "what happens next", score: 4 },
+  { keyword: "must see", score: 5 },
 ]
 
 export function isDevNews(title: string) {
