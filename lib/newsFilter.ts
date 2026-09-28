@@ -10,7 +10,7 @@ const positiveKeywords = [
 
   { keyword: "github", score: 7 },
   { keyword: "open source", score: 7 },
-  
+
   { keyword: "security", score: 6 },
   { keyword: "developer", score: 6 },
   { keyword: "software", score: 5 },
@@ -35,7 +35,7 @@ const negativeKeywords = [
   { keyword: "this changes everything", score: 6 },
   { keyword: "what happens next", score: 4 },
   { keyword: "must see", score: 5 },
-]
+];
 
 export function isDevNews(title: string) {
   const t = title.toLowerCase();
