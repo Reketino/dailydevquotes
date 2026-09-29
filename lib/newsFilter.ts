@@ -71,6 +71,12 @@ export function scoreNews(title: string) {
 
   let score = 0;
 
+  for (const item of positiveKeywords) {
+    if (t.includes(item.keyword)) {
+      score += item.score;
+    }
+  }
+
   if (t.includes("next.js")) score += 10;
   if (t.includes("react")) score += 9;
   if (t.includes("typescript")) score += 9;
