@@ -83,20 +83,5 @@ export function scoreNews(title: string) {
     }
   }
 
-  if (t.includes("next.js")) score += 10;
-  if (t.includes("react")) score += 9;
-  if (t.includes("typescript")) score += 9;
-  if (t.includes("javascript")) score += 8;
-  if (t.includes("python")) score += 8;
-  if (/\bai\b/.test(t)) score += 8;
-  if (t.includes("artificial intelligence")) score += 8;
-  if (t.includes("github")) score += 7;
-  if (t.includes("open source")) score += 7;
-  if (t.includes("security")) score += 6;
-  if (t.includes("developer")) score += 6;
-  if (t.includes("software")) score += 5;
-  if (t.includes("programming")) score += 5;
-  if (t.includes("code")) score += 4;
-
   return score;
 }
