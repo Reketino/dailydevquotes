@@ -78,7 +78,7 @@ export function scoreNews(title: string) {
   }
 
   for (const item of negativeKeywords) {
-    if(t.includes(item.keyword)) {
+    if (t.includes(item.keyword)) {
       score -= item.score;
     }
   }
