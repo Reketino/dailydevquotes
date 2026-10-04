@@ -3,7 +3,7 @@ type KeywordRule = {
   score: number;
 }
 
-const positiveKeywords = [
+const positiveKeywords: KeywordRule[] = [
   { keyword: "next.js", score: 10 },
   { keyword: "react", score: 9 },
   { keyword: "typescript", score: 9 },
