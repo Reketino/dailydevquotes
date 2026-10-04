@@ -1,3 +1,8 @@
+type KeywordRule = {
+  keyword: string;
+  score: number;
+}
+
 const positiveKeywords = [
   { keyword: "next.js", score: 10 },
   { keyword: "react", score: 9 },
