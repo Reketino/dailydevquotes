@@ -34,7 +34,7 @@ const positiveKeywords: KeywordRule[] = [
   { keyword: "exploit", score: 8 },
 ];
 
-const negativeKeywords = [
+const negativeKeywords: KeywordRule[] = [
   { keyword: "you won't believe", score: 8 },
   { keyword: "shocking", score: 5 },
   { keyword: "this changes everything", score: 6 },
