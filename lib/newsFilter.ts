@@ -90,3 +90,9 @@ export function scoreNews(title: string) {
 
   return score;
 }
+
+export function explainNewsScore(title: string) {
+  const t = title.toLowerCase();
+
+  
+}
