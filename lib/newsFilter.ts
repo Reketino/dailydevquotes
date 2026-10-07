@@ -94,5 +94,12 @@ export function scoreNews(title: string) {
 export function explainNewsScore(title: string) {
   const t = title.toLowerCase();
 
+  const matches: {
+    keyword: string;
+    score: number;
+  }[] = [];
+
+  
+
   
 }
