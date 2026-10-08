@@ -99,6 +99,15 @@ export function explainNewsScore(title: string) {
     score: number;
   }[] = [];
 
+  for (const item of positiveKeywords) {
+    if (t.includes(item.keyword)) {
+      matches.push({
+        keyword: item.keyword,
+        score: item.score,
+      });
+    }
+  }
+
   
 
   
