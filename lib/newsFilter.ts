@@ -108,7 +108,4 @@ export function explainNewsScore(title: string) {
     }
   }
 
-  
-
-  
 }
