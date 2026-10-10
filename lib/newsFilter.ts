@@ -108,4 +108,13 @@ export function explainNewsScore(title: string) {
     }
   }
 
+ for (const item of negativeKeywords) {
+    if (t.includes(item.keyword)) {
+      matches.push({
+        keyword: item.keyword,
+        score: -item.score,
+      });
+    }
+  }
+
 }
