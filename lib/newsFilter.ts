@@ -116,5 +116,10 @@ export function explainNewsScore(title: string) {
       });
     }
   }
-
+  
+  return {
+    title,
+    score: scoreNews(title),
+    matches,
+  };
 }
