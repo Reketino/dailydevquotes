@@ -1,7 +1,7 @@
 type KeywordRule = {
   keyword: string;
   score: number;
-}
+};
 
 const positiveKeywords: KeywordRule[] = [
   { keyword: "next.js", score: 10 },
@@ -108,7 +108,7 @@ export function explainNewsScore(title: string) {
     }
   }
 
- for (const item of negativeKeywords) {
+  for (const item of negativeKeywords) {
     if (t.includes(item.keyword)) {
       matches.push({
         keyword: item.keyword,
@@ -116,7 +116,7 @@ export function explainNewsScore(title: string) {
       });
     }
   }
-  
+
   return {
     title,
     score: scoreNews(title),
