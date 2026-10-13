@@ -42,6 +42,14 @@ const negativeKeywords: KeywordRule[] = [
   { keyword: "must see", score: 5 },
 ];
 
+function matchesKeyword(title: string, keyword: string) {
+  if (keyword === "ai") {
+    return  /\bai\b/.test(title);
+  }
+
+  
+}
+
 export function isDevNews(title: string) {
   const t = title.toLowerCase();
 
