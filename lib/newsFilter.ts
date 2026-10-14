@@ -47,7 +47,7 @@ function matchesKeyword(title: string, keyword: string) {
     return  /\bai\b/.test(title);
   }
 
-  
+  return title.includes(keyword);
 }
 
 export function isDevNews(title: string) {
