@@ -85,7 +85,7 @@ export function scoreNews(title: string) {
   let score = 0;
 
   for (const item of positiveKeywords) {
-    if (t.includes(item.keyword)) {
+    if (matchesKeyword(t, item.keyword)) {
       score += item.score;
     }
   }
