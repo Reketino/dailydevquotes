@@ -44,7 +44,7 @@ const negativeKeywords: KeywordRule[] = [
 
 function matchesKeyword(title: string, keyword: string) {
   if (keyword === "ai") {
-    return  /\bai\b/.test(title);
+    return /\bai\b/.test(title);
   }
 
   return title.includes(keyword);
@@ -117,7 +117,7 @@ export function explainNewsScore(title: string) {
   }
 
   for (const item of negativeKeywords) {
-    if (t.includes(item.keyword)) {
+    if (matchesKeyword(t, item.keyword)) {
       matches.push({
         keyword: item.keyword,
         score: -item.score,
