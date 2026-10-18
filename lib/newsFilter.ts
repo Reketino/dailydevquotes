@@ -108,7 +108,7 @@ export function explainNewsScore(title: string) {
   }[] = [];
 
   for (const item of positiveKeywords) {
-    if (t.includes(item.keyword)) {
+    if (matchesKeyword(t, item.keyword)) {
       matches.push({
         keyword: item.keyword,
         score: item.score,
