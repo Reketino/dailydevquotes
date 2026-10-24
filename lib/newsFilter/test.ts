@@ -5,4 +5,5 @@ const testTitles = [
     "Critical security vulnerability found in JavaScript package",
     "GitHub launches new AI developer tools",
     "Email security update",
-]
+    "You won't believe this shocking software story",
+];
