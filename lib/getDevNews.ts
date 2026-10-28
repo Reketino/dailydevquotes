@@ -57,7 +57,7 @@ export async function getDevNews(): Promise<NewsItem> {
       return { title: "No relevant dev news today" };
     }
 
-    const list = (filtered.length > 0 ? filtered : items).sort(
+    const list = filtered.sort(
       (a, b) => scoreNews(b.title) - scoreNews(a.title),
     );
 
