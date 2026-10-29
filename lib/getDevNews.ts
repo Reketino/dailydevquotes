@@ -1,8 +1,4 @@
-import {
-  isDevNews,
-  isExcludedNews,
-  scoreNews,
-} from "./newsFilter";
+import { isDevNews, isExcludedNews, scoreNews } from "./newsFilter";
 
 type NewsItem = {
   title: string;
@@ -61,22 +57,20 @@ export async function getDevNews(): Promise<NewsItem> {
       (a, b) => scoreNews(b.title) - scoreNews(a.title),
     );
 
-    const day = Math.floor(Date.now() / 86400000);
-
+    const day = Math.floor(Date.now() / 86400000)
     const topNews = list.slice(0, Math.min(5, list.length));
-    
     const index = day % topNews.length;
 
-    return ( 
-      topNews[index] ?? { 
+    return (
+      topNews[index] ?? {
         title: "No dev news today",
-      } 
+      }
     );
   } catch (error) {
     console.log("NEWS ERROR:", error);
-    
-    return { 
-      title: "No dev news today" 
+
+    return {
+      title: "No dev news today",
     };
   } finally {
     clearTimeout(timeout);
