@@ -57,7 +57,7 @@ export async function getDevNews(): Promise<NewsItem> {
       (a, b) => scoreNews(b.title) - scoreNews(a.title),
     );
 
-    const day = Math.floor(Date.now() / 86400000)
+    const day = Math.floor(Date.now() / 86400000);
     const topNews = list.slice(0, Math.min(5, list.length));
     const index = day % topNews.length;
 
