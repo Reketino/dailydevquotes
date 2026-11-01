@@ -53,21 +53,28 @@ function matchesKeyword(title: string, keyword: string) {
 export function isDevNews(title: string) {
   const t = title.toLowerCase();
 
+ const developmentKeywords = [
+
+    "artificial intelligence",
+    "developer",
+    "software",
+    "programming",
+    "code",
+    "security",
+    "github",
+    "open source",
+    "javascript",
+    "typescript",
+    "python",
+    "react",
+    "next.js",
+    "security vulnerability",
+    
+  ];
+
   return (
-    /\bai\b/.test(t) ||
-    t.includes("artificial intelligence") ||
-    t.includes("developer") ||
-    t.includes("software") ||
-    t.includes("programming") ||
-    t.includes("code") ||
-    t.includes("security") ||
-    t.includes("github") ||
-    t.includes("open source") ||
-    t.includes("javascript") ||
-    t.includes("typescript") ||
-    t.includes("python") ||
-    t.includes("react") ||
-    t.includes("next.js")
+      /\bai\b/.test(t) ||
+    developmentKeywords.some((keyword) => t.includes(keyword))
   );
 }
 
