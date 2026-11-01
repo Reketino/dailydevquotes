@@ -69,6 +69,7 @@ export function isDevNews(title: string) {
     "react",
     "next.js",
     "security vulnerability",
+    "cybersecurity",
     
   ];
 
