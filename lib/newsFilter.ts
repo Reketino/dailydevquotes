@@ -71,6 +71,7 @@ export function isDevNews(title: string) {
     "security vulnerability",
     "cybersecurity",
     "software security",
+    "cve-",
   ];
 
   return (
