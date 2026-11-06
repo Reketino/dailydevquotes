@@ -73,7 +73,7 @@ export function isDevNews(title: string) {
     "software security",
     "cve-",
     "npm package",
-    "",
+    "developer tools",
   ];
 
   return (
