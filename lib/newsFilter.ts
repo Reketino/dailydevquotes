@@ -75,6 +75,7 @@ export function isDevNews(title: string) {
     "npm package",
     "developer tools",
     "dev tools",
+    "api",
   ];
 
   return (
