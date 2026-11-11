@@ -53,8 +53,7 @@ function matchesKeyword(title: string, keyword: string) {
 export function isDevNews(title: string) {
   const t = title.toLowerCase();
 
- const developmentKeywords = [
-
+  const developmentKeywords = [
     "artificial intelligence",
     "developer",
     "software",
@@ -81,7 +80,7 @@ export function isDevNews(title: string) {
   ];
 
   return (
-      /\bai\b/.test(t) ||
+    /\bai\b/.test(t) ||
     developmentKeywords.some((keyword) => t.includes(keyword))
   );
 }
