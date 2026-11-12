@@ -3,11 +3,14 @@ import { explainNewsScore } from "../newsFilter";
 console.log("Starting newsFilter tests...");
 
 const testTitles = [
-  "Next.js announces a new version",
-  "Critical security vulnerability found in JavaScript package",
-  "GitHub launches new AI developer tools",
+  "New JavaScript framework improves developer productivity",
+  "Critical npm package vulnerability discovered",
+  "Celebrity announces new AI business",
+  "Football club launches a new website",
+  "New AI model generates realistic images",
+  "GitHub launches new developer tools",
   "Email security update",
-  "You won't believe this shocking software story",
+  "New database technology improves query performance",
 ];
 
 for (const title of testTitles) {
