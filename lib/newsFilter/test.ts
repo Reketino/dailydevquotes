@@ -1,4 +1,8 @@
-import { explainNewsScore } from "../newsFilter";
+import {
+  explainNewsScore,
+  isDevNews,
+  isExcludedNews,
+} from "../newsFilter";
 
 console.log("Starting newsFilter tests...");
 
