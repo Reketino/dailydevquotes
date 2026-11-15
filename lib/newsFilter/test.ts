@@ -19,6 +19,7 @@ const testTitles = [
 
 for (const title of testTitles) {
     console.log("\n--------------------------------");
+     console.log("TITLE:", title);
 }
 
 console.log("NewsFilter tests completed!");
