@@ -19,7 +19,8 @@ const testTitles = [
 
 for (const title of testTitles) {
     console.log("\n--------------------------------");
-     console.log("TITLE:", title);
+    console.log("TITLE:", title);
+    console.log("IS DEV NEWS:", isDevNews(title));
 }
 
 console.log("NewsFilter tests completed!");
