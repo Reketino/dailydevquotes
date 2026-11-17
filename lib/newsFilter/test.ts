@@ -21,6 +21,7 @@ for (const title of testTitles) {
     console.log("\n--------------------------------");
     console.log("TITLE:", title);
     console.log("IS DEV NEWS:", isDevNews(title));
+    console.log("IS EXCLUDED:", isExcludedNews(title));
 }
 
 console.log("NewsFilter tests completed!");
