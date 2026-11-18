@@ -22,6 +22,7 @@ for (const title of testTitles) {
     console.log("TITLE:", title);
     console.log("IS DEV NEWS:", isDevNews(title));
     console.log("IS EXCLUDED:", isExcludedNews(title));
+    console.log("SCORE:", explainNewsScore(title));
 }
 
 console.log("NewsFilter tests completed!");
