@@ -1,10 +1,9 @@
 import { cacheNews } from "@/lib/cacheNews";
 
 export async function GET() {
-    const news = await cacheNews();
+  const news = await cacheNews();
 
-    return Response.json({
-       success: true, 
-    })
-    
+  return Response.json({
+    success: true,
+  });
 }
