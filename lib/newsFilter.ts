@@ -4,11 +4,11 @@ type KeywordRule = {
 };
 
 const positiveKeywords: KeywordRule[] = [
-  { keyword: "next.js", score: 10 },
-  { keyword: "react", score: 9 },
-  { keyword: "typescript", score: 9 },
-  { keyword: "javascript", score: 8 },
-  { keyword: "python", score: 8 },
+  { keyword: "next.js", score: 12 },
+  { keyword: "react", score: 10 },
+  { keyword: "typescript", score: 10 },
+  { keyword: "javascript", score: 9 },
+  { keyword: "python", score: 9 },
 
   { keyword: "ai", score: 8 },
   { keyword: "artificial intelligence", score: 8 },
