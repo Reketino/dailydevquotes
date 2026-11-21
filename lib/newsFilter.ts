@@ -10,8 +10,10 @@ const positiveKeywords: KeywordRule[] = [
   { keyword: "javascript", score: 9 },
   { keyword: "python", score: 9 },
 
-  { keyword: "ai", score: 8 },
+  
   { keyword: "artificial intelligence", score: 8 },
+  {keyword: "large language model", score: 9 },
+  { keyword: "ai", score: 5 },
 
   { keyword: "github", score: 7 },
   { keyword: "open source", score: 7 },
