@@ -17,6 +17,8 @@ const positiveKeywords: KeywordRule[] = [
   { keyword: "machine learning", score: 8 },
   { keyword: "ai coding", score: 12 },
   { keyword: "ai developer tools", score: 12 },
+  { keyword: "ai coding assistant", score: 12 },
+  
   { keyword: "ai", score: 5 },
 
   { keyword: "github", score: 7 },
